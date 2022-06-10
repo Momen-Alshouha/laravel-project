@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMentorsTable extends Migration
+class CreateMentorRequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,19 @@ class CreateMentorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mentors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('mentor_requests', function (Blueprint $table) {
+            $table->increments('id');
+
             $table->string('mentor_firstname');
             $table->string('mentor_lastname');
             $table->string('mentor_email');
             $table->string('mentor_password');
             $table->bigInteger('mentor_phone_number');
             $table->text('mentor_image');
-            $table->bigInteger('mentor_category')->unsigned()->nullable();
+            $table->integer('mentor_category')->unsigned();
             $table->text('mentor_about');
 
-
-            $table->foreign('mentor_category')->references('id')->on('services')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
-
-
-
-
+            $table->foreign('mentor_category')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
 
 
             $table->timestamps();
@@ -46,6 +39,6 @@ class CreateMentorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mentors');
+        Schema::dropIfExists('mentor_requests');
     }
 }

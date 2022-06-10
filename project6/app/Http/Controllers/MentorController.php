@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MentorRequest;
+use App\Models\mentor;
 use Illuminate\Http\Request;
 
-class MentorRequestController extends Controller
+class MentorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MentorRequestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MentorRequest  $mentorRequest
+     * @param  \App\Models\mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function show(MentorRequest $mentorRequest)
+    public function show(mentor $mentor)
     {
         //
     }
@@ -52,10 +52,10 @@ class MentorRequestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MentorRequest  $mentorRequest
+     * @param  \App\Models\mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function edit(MentorRequest $mentorRequest)
+    public function edit(mentor $mentor)
     {
         //
     }
@@ -64,10 +64,10 @@ class MentorRequestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MentorRequest  $mentorRequest
+     * @param  \App\Models\mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MentorRequest $mentorRequest)
+    public function update(Request $request, mentor $mentor)
     {
         //
     }
@@ -75,10 +75,10 @@ class MentorRequestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MentorRequest  $mentorRequest
+     * @param  \App\Models\mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MentorRequest $mentorRequest)
+    public function destroy(mentor $mentor)
     {
         //
     }
