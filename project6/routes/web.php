@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+ 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/layout', function () {
+    return view('pages.layout');
 });
+
+Route::get('/', function () {
+    return view('pages.home');
+});
+
+Route::get('/show', function () {
+    return view('pages.show');
+});
+
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('pages.home');
