@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MentorController;
+use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 
  
@@ -28,10 +30,15 @@ Route::get('/show', function () {
     return view('pages.show');
 });
  
-Route::get('/profile', function () {
-    return view('pages.profile');
-});
+// Route::get('/profile', function () {
+//     return view('pages.profile');
+// });
 
+
+Route::resource('profile',MentorController::class);
+Route::post('runEdit',[RegisterController::class,'update']);
+
+// Route::get('editprofile',[MentorController::class,'myedit']);
 Route::get('/editprofile', function () {
     return view('pages.editprofile');
 });

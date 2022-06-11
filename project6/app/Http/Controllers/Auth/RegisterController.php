@@ -68,6 +68,37 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'mentor_category'=>$data['ctg'],
+            'mentor_about'=>$data['desc']
         ]);
     }
+    // public function update(Request $request, User $mentor)
+    // {
+    //     // $id = $mentor;
+    //     // $user = User::find($mentor);
+    //     $name = $request->input('name');
+    //     $uemail = $request->input('email');
+    //     $mentor->update([$name, $uemail]);
+    //     // $mentor->save();
+
+
+    //     // $id = $mentor;
+    //     // $user = User::find($id);
+      
+    //     // $user->name = Request::input('name');
+    //     // $user->email = Request::input('email');
+      
+    //     // // $request->validate([
+    //     // //     'name'=>'required',
+            
+    //     // // ]);
+    //     // // $mentor->update($request->all());
+    //     // $mentor->save();
+    //     // $mentor->update([$request->input('name'),$request->input('email')]);
+    //     // $mentor->save();
+
+    //     return view('pages.editprofile')
+    //      ->with('success','Movie updated successflly') ;
+
+    // }
 }
