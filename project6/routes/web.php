@@ -26,8 +26,13 @@ Route::get('/show', function () {
     return view('pages.show');
 });
  
- 
+Route::get('/profile', function () {
+    return view('pages.profile');
+});
 
+Route::get('/editprofile', function () {
+    return view('pages.editprofile');
+});
 Auth::routes();
 
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
