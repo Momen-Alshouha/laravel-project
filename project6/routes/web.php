@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
  
 
 /*
@@ -33,6 +35,14 @@ Route::get('/profile', function () {
 Route::get('/editprofile', function () {
     return view('pages.editprofile');
 });
+
+Route::get('/master', function () {
+    return view('admin.master');
+});
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
 Auth::routes();
 
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
