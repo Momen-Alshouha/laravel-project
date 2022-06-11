@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\UserM;
+use Illuminate\Support\Facades\Auth;
 
  
 
@@ -33,10 +34,22 @@ Route::get('/show', function () {
 //     return view('pages.profile');
 // });
 
+
 Route::resource('profile',MentorController::class);
 Route::post('runEdit',[RegisterController::class,'update']);
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
+Route::get('/editprofile', function () {
+    return view('pages.editprofile');
+});
+
+Route::get('/master', function () {
+    return view('admin.master');
+});
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
 Auth::routes();
 
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
