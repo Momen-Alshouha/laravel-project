@@ -1,3 +1,4 @@
+@extends('pages.layout')
 @extends('layouts.app')
 
 @section('content')

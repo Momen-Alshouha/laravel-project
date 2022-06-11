@@ -25,8 +25,9 @@ Route::get('/', function () {
 Route::get('/show', function () {
     return view('pages.show');
 });
+ 
+ 
 
+Auth::routes();
 
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('pages.home');
+Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
