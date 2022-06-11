@@ -46,6 +46,9 @@ Route::get('/editprofile', function () {
 Route::get('/master', function () {
     return view('admin.master');
 });
+
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
