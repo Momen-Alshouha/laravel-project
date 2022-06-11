@@ -16,7 +16,7 @@
               <p class="text-muted mb-1">Full Stack Developer</p>
               <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Edit Profile </button>
+                <a href="{{ route('profile.show',Auth::user()->id) }}" type="button" class="btn btn-primary">Edit Profile </a>
                 <button type="button" class="btn btn-outline-primary ml-2">Delete Profile</button>
               </div>
             </div>
@@ -56,7 +56,7 @@
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Johnatan Smith</p>
+                  <p class="text-muted mb-0">{{Auth::user()->name}} </p>
                 </div>
               </div>
               <hr>
@@ -65,7 +65,7 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">example@example.com</p>
+                  <p class="text-muted mb-0">{{Auth::user()->email}}</p>
                 </div>
               </div>
               <hr>
@@ -80,10 +80,10 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Mobile</p>
+                  <p class="mb-0">About</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">(098) 765-4321</p>
+                  <p class="text-muted mb-0">{{Auth::user()->mentor_about}}</p>
                 </div>
               </div>
               <hr>

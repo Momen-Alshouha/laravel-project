@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('CREATE A NEW ACCOUNT') }}</div>
+                <div class="card-header">{{ __('JOIN TO OUR MENTORS') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -39,7 +39,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                     
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
@@ -61,7 +61,35 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="ctg" class="col-md-4 col-form-label text-md-end">{{ __('Majority') }}</label>
 
+                            <div class="col-md-6">
+                                <select id="ctg" class="form-control" name="ctg" value="{{ old('ctg') }}"  required>
+                                    <option value="1">aa </option>
+                                </select>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="desc" class="col-md-4 col-form-label text-md-end">{{ __('Why do you want join us') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="desc" class="form-control" name="desc" value="{{ old('desc') }}" placeholder="write " required>
+                                </textarea>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -17,8 +17,7 @@
               <p class="text-muted mb-1">Full Stack Developer</p>
               <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Back To Profile </button>
-                <button type="button" class="btn btn-outline-primary ml-2">Save</button>
+                <a href="{{ route('profile.edit',Auth::user()->id) }}"  type="button" class="btn btn-primary" >Back To Profile </a>
               </div>
             </div>
           </div>
@@ -52,13 +51,15 @@
         <div class="col-lg-8">
           <div class="card mb-4">
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('runEdit.create',Auth::user()->id) }}">
+                  @csrf
+                  @method('PUT')
               <div class="row">
                 <div class="col-sm-3">
                   <label class="mb-0">Full Name</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" name="name" value="Johnatan Smith" class="text-muted mb-0"> 
+                  <input type="text" name="name"  id="name" class="text-muted mb-0"> 
                 </div>
               </div>
               <hr>
@@ -67,32 +68,26 @@
                   <label class="mb-0">Email</label>
                 </div>
                 <div class="col-sm-9">
-                    <input type="email" name="email" value="example@example.com" class="text-muted mb-0"> 
+                    <input type="email" name="email"  id="email" class="text-muted mb-0"> 
                   
                 </div>
               </div>
               <hr>
-              <div class="row">
+              {{-- <div class="row">
                 <div class="col-sm-3">
                   <label class="mb-0">Phone</label>
                 </div>
                 <div class="col-sm-9">
-                    <input type="text" name="phonenumber" value="(097) 234-5678" class="text-muted mb-0"> 
+                    <input type="text" name="phonenumber" class="text-muted mb-0"> 
  
-                </div>
+                </div> --}}
               </div>
              
              
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <label class="mb-0">Address</label>
-                </div>
-                <div class="col-sm-9">
-                    <input type="text" name="address" value="Bay Area, San Francisco, CA" class="text-muted mb-0"> 
- 
-                </div>
-              </div>
+             <br><br>
+              <input type="submit" class="btn btn-outline-primary ml-2" value="Save">
+
+                </form>
             </div>
           </div>
           {{-- <div class="row">

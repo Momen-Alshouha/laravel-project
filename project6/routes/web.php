@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MentorController;
+use App\Http\Controllers\UserM;
+
  
 
 /*
@@ -26,13 +29,14 @@ Route::get('/show', function () {
     return view('pages.show');
 });
  
-Route::get('/profile', function () {
-    return view('pages.profile');
-});
+// Route::get('/profile', function () {
+//     return view('pages.profile');
+// });
 
-Route::get('/editprofile', function () {
-    return view('pages.editprofile');
-});
+Route::resource('profile',MentorController::class);
+Route::post('runEdit',[RegisterController::class,'update']);
+
+// Route::get('editprofile',[MentorController::class,'myedit']);
 Auth::routes();
 
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
