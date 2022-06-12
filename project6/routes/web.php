@@ -51,9 +51,9 @@ Route::get('/master', function () {
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-// Route::get('/addcategory', function () {
-//     return view('admin.addcategory');
-// });
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 
 
 Route::resource('/mentors', MentorRequestController::class);
@@ -62,9 +62,18 @@ Route::resource('/category', CategoryController::class);
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 
+Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
+
+
+
+Route::put('/editCat/{id}', [CategoryController::class,'update']);
 
 Auth::routes();
 
+
+
+
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
 
-Route::delete('users/{id}', [CategoryController::class, 'destroy'])->name('users.destroy');
+
+Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');

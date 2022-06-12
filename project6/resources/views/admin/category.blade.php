@@ -2,8 +2,13 @@
 
 
 
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
 <style>
     .btn-primary {
         color: #fff;
@@ -32,7 +37,8 @@
                         <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
                     </ol>
 
-                    <a href="/addcategory" class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add Categories</a>
+                    <a href="/addcategory" class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add
+                        Categories</a>
                 </div>
             </div>
         </div>
@@ -43,13 +49,14 @@
     <!-- ============================================================== -->
     <!-- ============================================================== -->
 
-    @if ($message= Session::get('success'))
+    @if ($message = Session::get('success'))
     <div class="alert alert-success" role="alert">
         {{ $message }}
     </div>
-    @elseif ($message= Session::get('status'))
+    @elseif ($message = Session::get('status'))
     <div class="alert alert-success" role="alert">
         {{ $message }}
+
     </div>
     @endif
     <!-- Container fluid  -->
@@ -74,18 +81,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($data as $value)
+                                @foreach ($data as $value)
                                 <tr>
-                                    <td>{{$value->category_name}}</td>
-                                    <td>{{$value->category_image}}</td>
+                                    <td>{{ $value->category_name }}</td>
+                                    <td>{{ $value->category_image }}</td>
                                     <td>
-                                        <form method="post" action="{{route('users.destroy',$value->id)}}" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
+                                        <!--  <form method="get" action="/editCat/{{ $value->id }}/edit" class="d-inline">
+                                        @csrf
+                                        @method('PUT')
+                                        <input class="btn btn-success" type="submit" value="Edit" name="edit">
+                                        </form> -->
 
-                                            <!-- <input class="btn btn-danger show_confirm" type="submit" value="Delete" name="delete"> -->
+                                        <form method="post" action="{{ route('category.destroy',$value->id) }}" class="d-inline">
+                                            @csrf
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -96,19 +106,9 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
+
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
 <script type="text/javascript">
@@ -117,8 +117,8 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure you want to delete this record?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `Are you sure you want to delete this category?`,
+                text: "If you delete this, it will delete all mentors under this category.",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -132,3 +132,14 @@
 </script>
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
