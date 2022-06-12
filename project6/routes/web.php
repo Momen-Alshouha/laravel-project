@@ -6,6 +6,7 @@ use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\categoryShowController;
  
 
 /*
@@ -59,6 +60,8 @@ Route::get('/dashboard', function () {
 Route::resource('/mentors', MentorRequestController::class);
 
 Route::resource('/category', CategoryController::class);
+Route::get('/', [categoryShowController::class,'index']);
+
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 

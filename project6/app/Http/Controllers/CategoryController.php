@@ -36,7 +36,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+  
+        $request->validate(['category_name'=>'min:3|required', 'category_image'=>'mimes:jpg,png|image']);
+        $category= new category();
+        $category->category_name=$request->category_name;
+        if($request->hasfile('category_image')){
+            $file=$request->file('category_image');
+            $ex=$file->getClientOriginalExtension();
+            $filename=time().'.'.$ex;
+            $file->move('uploads/category',$filename);
+            $category->category_image=$filename;
+        }
+        $category->save();
+        return redirect() -> route('category.index')->with('flash_message', 'category Added!');
+    
+
     }
 
     /**
@@ -56,9 +70,10 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
-    { $cat=category::find($category);
-       return view('admin.edit',compact('cat'));
+     public function edit($id)
+    {
+        $category = category::find($id);
+        return view('admin.edit') -> with('categories', $category);
     }
 
     /**
@@ -68,9 +83,20 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request)
     {
-        
+        $id=$request->id;
+        $category = category::find($id);
+        if($request->hasfile('category_image')){
+            $file=$request->file('category_image');
+            $ex=$file->getClientOriginalExtension();
+            $filename=time().'.'.$ex;
+            $file->move('uploads/category',$filename);
+            $category->category_image=$filename;
+        }
+        $category->category_name=$request->category_name;
+        $category->save();
+        return redirect('category')->with('flash_message', 'category Updated!');
     }
 
     /**
