@@ -8,6 +8,12 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Dancing+Script&family=Holtwood+One+SC&family=Lobster&family=Monoton&family=Montserrat:ital,wght@0,100;0,200;1,100&family=Ms+Madi&family=Satisfy&family=Shadows+Into+Light&family=Square+Peg&family=Staatliches&display=swap" rel="stylesheet">
+            
+    
+    
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -31,11 +37,12 @@
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block ">
         <div class="row align-items-center py-2 px-xl-5">
-            <div class="col-lg-3">
+            <div id="top" class="col-lg-3">
                 <a href="" class="text-decoration-none">
-                    <h2 class="m-0"><span class="text-primary">MENTOR</span>HUB</h2>
+                    <h2 class="m-0"><span> 
+                        <span class="text-primary" style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
                 </a>
-            </div>
+            </div> 
 
             <div class="col-lg-3 text-right">
                 <div class="d-inline-flex align-items-center">
@@ -66,13 +73,13 @@
             <div  class="col-lg-3 d-none d-lg-block">
                 <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"
                     data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
-                    <h5 class="text-primary m-4"><i class="fa fa-book-open mr-2"></i>Categories</h5>
-                    <i class="fa fa-angle-down text-primary"></i>
+                    <h5 class=" m-4"><i class="fa fa-book mr-2"></i>Categories</h5>
+                    <i class="fa fa-angle-down text-primary "></i>
                 </a>
-                <nav  class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
+                <nav  class="collapse position-absolute  navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
                     id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
                     <div  class="navbar-nav w-100">
-                        <div class="nav-item dropdown">
+                        <div class="nav-item dropdown"> 
                             <a href="#" class="nav-link" data-toggle="dropdown">Web Design <i
                                     class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
@@ -87,8 +94,9 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-lg-9">
-                <nav style="margin-left: 100px" class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+            <div class="col-lg-9 ">
+
+                <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
                     </a>
@@ -98,10 +106,9 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
                             <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="/show" class="nav-item nav-link">Mentors</a>
-                            <a href="#about" class="nav-item nav-link">About</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-
+                            <a href="{{route('profile.index')}}" class="nav-item nav-link">Mentors</a>
+                            <a href="/#about" class="nav-item nav-link">About</a>
+                            <a href="#contact" class="nav-item nav-link ">Contact</a>
 
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ms-auto">
@@ -109,7 +116,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Mentor login') }}</a>
                                         </li>
                                     @endif
 
@@ -120,24 +127,29 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('profile.edit',Auth::user()->id) }}" role="button"
-                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }}
+                                    <li class="nav-item ">
+                                        <a  class="nav-link " 
+                                        href="{{ route('profile.edit',Auth::user()->id) }}" role="button"
+                                            >
+                                            {{ __('My account')}}
+                                            {{-- {{ Auth::user()->name }} --}}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
+                                       
                                     </li>
+                                    {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                                        <li class="nav-item" >
+                                        <a style="color: #ff6600af " class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    
                                 @endguest
                             </ul>
 
@@ -157,7 +169,7 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div id="contact" class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
             <div class="col-lg-7 col-md-12">
                 <div class="row">
@@ -233,7 +245,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="back-to-top btn btn-lg btn-primary btn-lg-square "><i class="fa fa-angle-double-up"></i></a>
 
 
     <!-- JavaScript Libraries -->

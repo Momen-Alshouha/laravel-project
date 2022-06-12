@@ -64,13 +64,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // $path = request()->file('img')->storeAs('images',$data->file('img')->getClientOriginalName());
+
+        if(request()->file('img'))
+        {
+            $file =request()->file('img');
+            // $extention = request()->file('img')->getClientOriginalExtension();
+            $filename = $file->getClientOriginalName();
+            // $destinationPath = 'uploads/images/';
+            // request()->file('img')->storeAs('images/',$filename);
+            $file->move('uploads/images/',$filename);
+
+            // $data->img = $filename;
+        }   
+       
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'mentor_category'=>$data['ctg'],
-            'mentor_about'=>$data['desc']
+            'mentor_about'=>$data['desc'],
+
+            'img'=> $data['img']
         ]);
+        return view('/')
+              ->with('success','We will review your account,Thanks') ;
     }
     // public function update(Request $request, User $mentor)
     // {

@@ -10,22 +10,52 @@
             <h1>Meet Our Volunteer Mentors </h1>
         </div>
         <div class="row">
+
+            @foreach ($users as $user)
+            
+                <div class="col-md-6 col-lg-3 text-center team mb-4">
+                    <div class="team-item rounded overflow-hidden mb-2">
+                        <div class="team-img position-relative">
+                            <img class="img-fluid" src="{{asset('uploads/images/'.$user->img)}}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-light  mx-1" href="#">View </a>
+                                
+                            </div>
+                        </div>
+                        <div class="bg-secondary p-4">
+                            <h3>{{$user->name}}</h3>
+                            <h6>{{$user->email}}</h6>
+                            <p class="m-0">{{$user->mentor_about}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+        {{-- <div class="row">
+
+        @foreach ($users as $user)
+            
             <div class="col-md-6 col-lg-3 text-center team mb-4">
                 <div class="team-item rounded overflow-hidden mb-2">
                     <div class="team-img position-relative">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid" src="{{asset('uploads/images/'.$user->img)}}" alt="">
                         <div class="team-social">
                             <a class="btn btn-outline-light  mx-1" href="#">View </a>
                             
                         </div>
                     </div>
                     <div class="bg-secondary p-4">
-                        <h5>Jhon Doe</h5>
-                        <p class="m-0">Web Designer</p>
+                        <h3>{{$user->name}}</h3>
+                        <h6>{{$user->email}}</h6>
+                        <p class="m-0">{{$user->mentor_about}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3 text-center team mb-4">
+            @endforeach
+        </div> --}}
+
+
+
+
+            {{-- <div class="col-md-6 col-lg-3 text-center team mb-4">
                 <div class="team-item rounded overflow-hidden mb-2">
                     <div class="team-img position-relative">
                         <img class="img-fluid" src="img/team-2.jpg" alt="">
@@ -39,8 +69,8 @@
                         <p class="m-0">Web Designer</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3 text-center team mb-4">
+            </div> --}}
+            {{-- <div class="col-md-6 col-lg-3 text-center team mb-4">
                 <div class="team-item rounded overflow-hidden mb-2">
                     <div class="team-img position-relative">
                         <img class="img-fluid" src="img/team-3.jpg" alt="">
@@ -131,7 +161,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <!-- Team End -->
 

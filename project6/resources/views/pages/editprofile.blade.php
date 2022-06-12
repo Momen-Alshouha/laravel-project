@@ -11,7 +11,7 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              <img src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">John Smith</h5>
               <p class="text-muted mb-1">Full Stack Developer</p>
@@ -51,7 +51,7 @@
         <div class="col-lg-8">
           <div class="card mb-4">
             <div class="card-body">
-                <form method="POST" action="{{ route('runEdit.create',Auth::user()->id) }}">
+                <form method="POST" action="{{ route('profile.update',Auth::user()) }}">
                   @csrf
                   @method('PUT')
               <div class="row">
@@ -59,7 +59,7 @@
                   <label class="mb-0">Full Name</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" name="name"  id="name" class="text-muted mb-0"> 
+                  <input type="text" name="name"  id="name"  value="{{Auth::user()->name}}" class="text-muted mb-0"> 
                 </div>
               </div>
               <hr>
@@ -68,7 +68,7 @@
                   <label class="mb-0">Email</label>
                 </div>
                 <div class="col-sm-9">
-                    <input type="email" name="email"  id="email" class="text-muted mb-0"> 
+                    <input type="email" name="email"  id="email"  value="{{Auth::user()->email}}" class="text-muted mb-0"> 
                   
                 </div>
               </div>
