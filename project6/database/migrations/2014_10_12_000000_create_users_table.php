@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('mentor_about');
             $table->rememberToken();
             $table->timestamps();
+            
             $table->foreign('mentor_category')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
         });
     }

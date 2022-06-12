@@ -6,10 +6,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
-
-
+namespace App\Http\Controllers;
 use App\Models\mentor;
+use App\Models\mentor_request;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -109,12 +108,7 @@ class MentorController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\mentor  $mentor
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy(mentor $mentor)
     {
         $mentor->delete();
