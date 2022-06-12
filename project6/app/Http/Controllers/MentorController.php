@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers\Auth;
+use App\Http\Controllers\Auth;
+
 // namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -19,6 +19,12 @@ use Illuminate\Http\Request;
 
 class MentorController extends Controller
 {
+//     public function logout()
+// {
+   
+// }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +32,8 @@ class MentorController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-    //    return view('pages.profile', compact('user')); 
+        $users = User::all();
+    return view('pages.show', compact('users')); 
     }
     public function getMentor()
     {
@@ -41,7 +47,13 @@ class MentorController extends Controller
      */
     public function create()
     {
-        //
+        // Auth::logout();
+ 
+        // request()->session()->invalidate();
+     
+        // request()->session()->regenerateToken();
+     
+        // return redirect('pages.home');
     }
 
     /**
@@ -66,6 +78,7 @@ class MentorController extends Controller
         return view('pages.editprofile',compact('mentor'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -85,13 +98,26 @@ class MentorController extends Controller
      */
     public function update(Request $request, User $mentor)
     {
+
+
+        $user =$mentor;
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->save();
+
         // $id = $mentor;
         // $user = User::find($mentor);
-        $name = $request->input('name');
-        $uemail = $request->input('email');
-        $mentor->update([$name, $uemail]);
-        $mentor->save();
+        // $name = $request->input('name');
+        // $uemail = $request->input('email');  mentor_category
+        // $user = Auth::user();
+        // $mentor->name = Request::input('name');
+        // $mentor->email = Request::input('email');
+        // $mentor->password = Request::except('password');
+        // $mentor->password = Request::except('mentor_category');
+        // $mentor->password = Request::except('mentor_about');
 
+
+        // $mentor->update([$mentor->name,  $mentor->email]);
 
         // $id = $mentor;
         // $user = User::find($id);

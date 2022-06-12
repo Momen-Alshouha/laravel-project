@@ -4,6 +4,10 @@
 @section('content')
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mb-5">
+         {{-- <a id="logout-form" href="{{  Auth::logout()}}"  class="">logout </a> --}}
+                {{-- @csrf --}}
+                {{-- @method('HEAD') --}}
+                {{-- <input type="submit"  href="{{  Auth::logout()}}" value="logout"> --}}
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel" id="mycarousel">
             <ol class="carousel-indicators">
                 <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
@@ -16,9 +20,9 @@
                         style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Chose a mentor and start learning for free</h5>
+                            <h5 class="text-white text-uppercase mb-md-3">Choose a mentor and start <span class="font-weight-semi-bold " style="background-color: #ff660057">learning for free</span>  </h5>
                             <h1 class="display-4 text-white mb-md-4">Vounteer Mentors At Your Service</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="{{route('profile.index')}}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View our mentors</a>
                         </div>
                     </div>
                 </div>
@@ -26,10 +30,11 @@
                     <img class="position-relative w-100" src="img/james-harrison-vpOeXr5wmR4-unsplash.jpg"
                         style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Looking for volunteering as a mentor!</h5>
                             <h1 class="display-4 text-white mb-md-4">Join Our Team of Volunteer Mentors</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Join Us</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -41,7 +46,7 @@
                             <h5 class="text-white text-uppercase mb-md-3">Providing you with all the best mentors for your
                                 needs</h5>
                             <h1 class="display-4 text-white mb-md-4">New Way To Learn From Home and for free</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                            <a href="#about" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -191,67 +196,39 @@
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Mentors</h5>
                 <h1>Meet Our Volunteer Mentors</h1>
             </div>
-            <div class="row">
+            @php
+            use App\Models\User;
+
+           $users = User::all();
+        @endphp
+                    <div class="row">
+
+            @foreach ($users as $user)
+            
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="{{asset('uploads/images/'.$user->img)}}" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light  mx-1" href="#">View </a>
                                 
                             </div>
                         </div>
                         <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
+                            <h3>{{$user->name}}</h3>
+                            <h6>{{$user->email}}</h6>
+                            <p class="m-0">{{$user->mentor_about}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light  mx-1" href="#">View </a>
-                                
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light  mx-1" href="#">View </a>
-                                
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center team mb-4">
-                    <div class="team-item rounded overflow-hidden mb-2">
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light  mx-1" href="#">View </a>
-                                
-                            </div>
-                        </div>
-                        <div class="bg-secondary p-4">
-                            <h5>Jhon Doe</h5>
-                            <p class="m-0">Web Designer</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
+               
+               
+                
+
+                
             </div>
         </div>
     </div>
@@ -277,7 +254,7 @@
                         consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor
                         justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam
                         ipsum stet</p>
-                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                    <a href="{{route('profile.index')}}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View our mentors</a>
                 </div>
             </div>
         </div>

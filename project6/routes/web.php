@@ -37,7 +37,8 @@ Route::get('/show', function () {
 
 
 Route::resource('profile',MentorController::class);
-Route::post('runEdit',[RegisterController::class,'update']);
+// Route::post('runEdit',[RegisterController::class,'update']);
+// Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
 Route::get('/editprofile', function () {
