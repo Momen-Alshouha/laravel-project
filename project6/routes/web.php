@@ -60,9 +60,15 @@ Route::get('/master', function () {
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-Route::get('/admin_profile', function () {
-    return view('admin.admin_profile');
-});
+// Route::get('/admin_profile', function () {
+//     return view('admin.admin_profile');
+// });
+
+Route::get('/admin_profile', [AdminController::class,'show']);
+
+Route::put('/edit_admin/{admin}', [AdminController::class,'update']);
+
+
 
 Route::get('/dashboard', [AdminController::class,'index']);
 
@@ -99,4 +105,7 @@ Route::get('/mentorSingle', function () {
     return view('pages.mentorSingle');
 });
 
+Route::resource('mentorSingle', singleMentor::class);
+
 Route::get('/mentorSingle', [singleMentor::class,'index']);
+Route::post('/sendmentor', [singleMentor::class,'sendmail']);

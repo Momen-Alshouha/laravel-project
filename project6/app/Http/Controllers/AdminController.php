@@ -50,7 +50,8 @@ class AdminController extends Controller
      */
     public function show(admin $admin)
     {
-        //
+        $admin = admin::find(1);
+        return view('admin.admin_profile', compact('admin'));
     }
 
     /**
@@ -73,7 +74,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, admin $admin)
     {
-        //
+        $admin->exists = true;
+
+        $admin->admin_name = $request->post('name');
+        $admin->admin_email = $request->post('email');
+        $admin->admin_password = $request->post('pass');
+
+        $admin->save();
+
+        return redirect()->back()->with('success', 'Profile Updated Successfully');
     }
 
     /**
