@@ -29,9 +29,10 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
-                        <li><a href="#" class="fw-normal">Dashboard</a></li>
+                        <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add Categories</a>
+                
+                    <a href="/addcategory" class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add Categories</a>
                 </div>
             </div>
         </div>
@@ -78,7 +79,7 @@
                                     <td>{{$value->category_name}}</td>
                                     <td>{{$value->category_image}}</td>
                                     <td>
-                                    <form method="post" action="{{route('category.destroy',$value->id)}}" class="d-inline">
+                                        <form method="post" action="{{route('category.destroy',$value->id)}}" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <input class="btn btn-danger" type="submit" value="Delete" name="delete">
