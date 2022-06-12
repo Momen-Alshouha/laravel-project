@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MentorRequestController;
@@ -37,7 +38,11 @@ Route::get('/show', function () {
 
 
 Route::resource('profile',MentorController::class);
-// Route::post('runEdit',[RegisterController::class,'update']);
+
+
+Route::post('edit_profile',[MentorController::class,'update_mentor']);
+
+
 // Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
  
 

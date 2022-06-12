@@ -38,7 +38,7 @@
     <div class="container-fluid d-none d-lg-block ">
         <div class="row align-items-center py-2 px-xl-5">
             <div id="top" class="col-lg-3">
-                <a href="" class="text-decoration-none">
+                <a href="/" class="text-decoration-none">
                     <h2 class="m-0"><span> 
                         <span class="text-primary" style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
                 </a>

@@ -91,33 +91,34 @@ class RegisterController extends Controller
         return view('/')
               ->with('success','We will review your account,Thanks') ;
     }
-    // public function update(Request $request, User $mentor)
-    // {
-    //     // $id = $mentor;
-    //     // $user = User::find($mentor);
-    //     $name = $request->input('name');
-    //     $uemail = $request->input('email');
-    //     $mentor->update([$name, $uemail]);
-    //     // $mentor->save();
+    public function update(Request $request, User $mentor)
+    {
+        $mentor->update($request->all());
+        // $id = $mentor;
+        // $user = User::find($mentor);
+        // $name = $request->input('name');
+        // $uemail = $request->input('email');
+        // $mentor->update([$name, $uemail]);
+        // $mentor->save();
 
 
-    //     // $id = $mentor;
-    //     // $user = User::find($id);
+        // $id = $mentor;
+        // $user = User::find($id);
       
-    //     // $user->name = Request::input('name');
-    //     // $user->email = Request::input('email');
+        // $user->name = Request::input('name');
+        // $user->email = Request::input('email');
       
-    //     // // $request->validate([
-    //     // //     'name'=>'required',
+        // // $request->validate([
+        // //     'name'=>'required',
             
-    //     // // ]);
-    //     // // $mentor->update($request->all());
-    //     // $mentor->save();
-    //     // $mentor->update([$request->input('name'),$request->input('email')]);
-    //     // $mentor->save();
+        // // ]);
+        // // $mentor->update($request->all());
+        // $mentor->save();
+        // $mentor->update([$request->input('name'),$request->input('email')]);
+        // $mentor->save();
 
-    //     return view('pages.editprofile')
-    //      ->with('success','Movie updated successflly') ;
+        return view('pages.editprofile')
+         ->with('success','Movie updated successflly') ;
 
-    // }
+    }
 }
