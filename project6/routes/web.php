@@ -68,11 +68,12 @@ Route::resource('/category', CategoryController::class);
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 
-Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
+// Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
 
-
-
-Route::put('/editCat/{id}', [CategoryController::class,'update']);
+// Route::put('/editCat/{id}', [CategoryController::class,'update']);
+Route::get('/editCat', function () {
+    return view('admin.edit');
+});
 
 Auth::routes();
 

@@ -62,7 +62,7 @@
         @endif
 
 
-        <form action="{{ route('c') }}" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="row">
