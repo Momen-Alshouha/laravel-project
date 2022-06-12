@@ -66,3 +66,5 @@ Route::get('/addcategory', [CategoryController::class,'create']);
 Auth::routes();
 
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
+
+Route::delete('users/{id}', [CategoryController::class, 'destroy'])->name('users.destroy');
