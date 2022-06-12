@@ -6,7 +6,7 @@ use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
- 
+use App\Http\Controllers\singleMentor;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,11 +39,12 @@ Route::get('/show', function () {
 Route::resource('profile',MentorController::class);
 // Route::post('runEdit',[RegisterController::class,'update']);
 // Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
+ 
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
-Route::get('/editprofile', function () {
-    return view('pages.editprofile');
-});
+// Route::get('/editprofile', function () {
+//     return view('pages.editprofile');
+// });
 
 Route::get('/master', function () {
     return view('admin.master');
@@ -77,3 +78,13 @@ Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+ 
+
+
+
+
+Route::get('/mentorSingle', function () {
+    return view('pages.mentorSingle');
+});
+
+Route::get('/m', [singleMentor::class,'index']);

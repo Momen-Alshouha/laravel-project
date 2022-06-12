@@ -122,7 +122,7 @@
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="nav-link"
+                                            <a class="nav-link "
                                                 href="{{ route('register') }}">{{ __('Join us') }}</a>
                                         </li>
                                     @endif
@@ -194,7 +194,7 @@
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Game Design</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Development</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
+                
                         </div>
                     </div>
                 </div>

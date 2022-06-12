@@ -20,12 +20,21 @@ class CreateUsersTable extends Migration
             $table->text('img');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->bigInteger('Phone_number')->unique();
             $table->integer('mentor_category')->unsigned();
+            $table->string('category_name');
+
             $table->text('mentor_about');
             $table->rememberToken();
             $table->timestamps();
             
             $table->foreign('mentor_category')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+
+
+            $table->foreign('category_name')->references('category_name')->on('categories')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
         });
     }
 
