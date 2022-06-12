@@ -1,14 +1,13 @@
 <?php
+namespace App\Http\Controllers;
 use App\Http\Controllers\Auth;
-
-// namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-namespace App\Http\Controllers;
+
 
 use App\Models\mentor;
 use App\Models\User;
@@ -17,17 +16,7 @@ use Illuminate\Http\Request;
 
 class MentorController extends Controller
 {
-//     public function logout()
-// {
-   
-// }
 
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $users = User::all();
@@ -54,55 +43,38 @@ class MentorController extends Controller
         // return redirect('pages.home');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\mentor  $mentor
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show(User $mentor)
     {
         return view('pages.editprofile',compact('mentor'));
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\mentor  $mentor
-     * @return \Illuminate\Http\Response
-     */
     public function edit(User $mentor)
     {
         return view('pages.profile',compact('mentor'));
     }    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\mentor  $mentor
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, User $mentor)
     {
+         $delete = User::find($mentor)->delete();
+     
+        // $mentor->update($request->all());
 
-
-        $user =$mentor;
-        $user->name = $request['name'];
-        $user->email = $request['email'];
-        $user->save();
-
+        // $user=User::find($mentor);
+        $mentor->name = $request['name'];
+        $mentor->email = $request['email'];
+        $mentor->img = $request['img'];
+        $mentor->password = $request['password'];
+        $mentor->mentor_category = $request['mentor_category'];
+        $mentor->mentor_about = $request['mentor_about'];
+        $mentor->save();
+        
         // $id = $mentor;
         // $user = User::find($mentor);
         // $name = $request->input('name');
@@ -145,6 +117,7 @@ class MentorController extends Controller
      */
     public function destroy(mentor $mentor)
     {
-        //
+        $mentor->delete();
+        return redirect('home');
     }
 }
