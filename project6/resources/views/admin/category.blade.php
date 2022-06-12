@@ -84,7 +84,9 @@
                                 @foreach ($data as $value)
                                 <tr>
                                     <td>{{ $value->category_name }}</td>
-                                   <td><img src="{{ asset('/uploads/Category/'.$value->category_image) }}" width="100px" height="100px" alt="Image"></td>
+                                    <td>
+                                        <img src="{{ asset('/uploads/Category/'.$value->category_image) }}" width="100px" height="100px" alt="Image">
+                                    </td>
                                     <td>
                                         <!--  <form method="get" action="/editCat/{{ $value->id }}/edit" class="d-inline">
                                         @csrf
@@ -97,7 +99,7 @@
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                         </form>
-                                        <a href="{{ route('category.edit',$value->id) }}" class="btn btn-primary btn-flat ">Update</a>
+                                        <a href="/editCat/{{$value->id}}" class="btn btn-primary btn-flat ">Update</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -133,14 +135,3 @@
 </script>
 
 @endsection
-
-
-
-
-
-
-
-
-
-
-

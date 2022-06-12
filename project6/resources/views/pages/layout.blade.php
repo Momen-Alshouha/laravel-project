@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Dancing+Script&family=Holtwood+One+SC&family=Lobster&family=Monoton&family=Montserrat:ital,wght@0,100;0,200;1,100&family=Ms+Madi&family=Satisfy&family=Shadows+Into+Light&family=Square+Peg&family=Staatliches&display=swap" rel="stylesheet">
-            
-    
-    
+
+
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -39,29 +39,72 @@
         <div class="row align-items-center py-2 px-xl-5">
             <div id="top" class="col-lg-3">
                 <a href="/" class="text-decoration-none">
-                    <h2 class="m-0"><span> 
-                        <span class="text-primary" style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
+                    <h2 class="m-0"><span>
+                            <span class="text-primary" style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
                 </a>
-            </div> 
+            </div>
 
-            <div class="col-lg-3 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
-                    <div class="text-left">
-                        <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
-                        <small>Mentor@Hub.com</small>
+            <div class="col-lg-9 ">
+
+                <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav py-0">
+                            <a href="/" class="nav-item nav-link ">Home</a>
+                            <a href="{{route('profile.index')}}" class="nav-item nav-link">Mentors</a>
+                            <a href="/#about" class="nav-item nav-link">About</a>
+                            <a href="#contact" class="nav-item nav-link ">Contact</a>
+
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ms-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Mentor login') }}</a>
+                                </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('register') }}">{{ __('Join us') }}</a>
+                                </li>
+                                @endif
+                                @else
+                                <li class="nav-item ">
+                                    <a class="nav-link " href="{{ route('profile.edit',Auth::user()->id) }}" role="button">
+                                        {{ __('My account')}}
+                                        {{-- {{ Auth::user()->name }} --}}
+                                    </a>
+
+
+                                </li>
+                                {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                                <li class="nav-item">
+                                    <a style="color: #ff6600af " class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+
+                                @endguest
+                            </ul>
+
+                        </div>
+                        {{-- <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a> --}}
                     </div>
-                </div>
+                </nav>
             </div>
-            <div class="col-lg-3 text-right">
-                <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-phone text-primary mr-3"></i>
-                    <div class="text-left">
-                        <h6 class="font-weight-semi-bold mb-1">Call Us</h6>
-                        <small>+962777777</small>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <!-- Topbar End -->
@@ -69,8 +112,8 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid">
-        <div  class="row border-top px-xl-5">
-            <div  class="col-lg-3 d-none d-lg-block">
+        <div class="row border-top px-xl-5">
+            <!-- <div  class="col-lg-3 d-none d-lg-block">
                 <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"
                     data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
                     <h5 class=" m-4"><i class="fa fa-book mr-2"></i>Categories</h5>
@@ -93,71 +136,8 @@
 
                     </div>
                 </nav>
-            </div>
-            <div class="col-lg-9 ">
+            </div> -->
 
-                <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav py-0">
-                            <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="{{route('profile.index')}}" class="nav-item nav-link">Mentors</a>
-                            <a href="/#about" class="nav-item nav-link">About</a>
-                            <a href="#contact" class="nav-item nav-link ">Contact</a>
-
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ms-auto">
-                                <!-- Authentication Links -->
-                                @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Mentor login') }}</a>
-                                        </li>
-                                    @endif
-
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                                href="{{ route('register') }}">{{ __('Join us') }}</a>
-                                        </li>
-                                    @endif
-                                @else
-                                    <li class="nav-item ">
-                                        <a  class="nav-link " 
-                                        href="{{ route('profile.edit',Auth::user()->id) }}" role="button"
-                                            >
-                                            {{ __('My account')}}
-                                            {{-- {{ Auth::user()->name }} --}}
-                                        </a>
-
-                                       
-                                    </li>
-                                    {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
-                                        <li class="nav-item" >
-                                        <a style="color: #ff6600af " class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                    
-                                @endguest
-                            </ul>
-
-                        </div>
-                        {{-- <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a> --}}
-                    </div>
-                </nav>
-            </div>
         </div>
     </div>
     <!-- Navbar End -->
@@ -180,10 +160,8 @@
                         <p><i class="fa fa-envelope mr-2"></i>Mentor@Hub.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i
-                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
@@ -194,7 +172,7 @@
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Game Design</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Development</a>
-                
+
                         </div>
                     </div>
                 </div>
@@ -205,8 +183,7 @@
                     kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;"
-                            placeholder="Your Email Address">
+                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
                         <div class="input-group-append">
                             <button class="btn btn-primary px-4">Sign Up</button>
                         </div>
@@ -215,15 +192,14 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
-        style="border-color: rgba(256, 256, 256, .1) !important;">
+
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important; ">
         <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Mentor Hub</a>. All Rights Reserved. Designed by <a
-                        href=" ">Mentor Hub Team</a>
+            <div class="col-lg-12 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white text-center">&copy; <a href="">Mentor Hub</a>. All Rights Reserved. Designed by <a href=" ">Mentor Hub Team</a>
                 </p>
             </div>
-            <div class="col-lg-6 text-center text-md-right">
+            <!-- <div class="col-lg-6 text-center text-md-right">
                 <ul class="nav d-inline-flex">
                     <li class="nav-item">
                         <a class="nav-link text-white py-0" href="#">Privacy</a>
@@ -238,7 +214,7 @@
                         <a class="nav-link text-white py-0" href="#">Help</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Footer End -->

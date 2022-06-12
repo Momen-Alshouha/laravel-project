@@ -38,7 +38,6 @@
                
                   
                   <div class="container">
-{{--  #FF6600 --}}
                       <a href="" class="text-decoration-none">
                           <h1 class="m-0"  style="color: #fff"><span class="ml-1" style="color:#FF6600">MENTOR</span>HUB</h1>
                         </a>
@@ -85,31 +84,38 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
+                <nav class="sidebar-nav"  style="padding-top: 15%;">
+                    <ul id="sidebarnav" >
                         <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
+                        <li class="sidebar-item pt-4 mb-4">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
+                                aria-expanded="false" style="font-size: 20px;">
+                                <i class="far fa-clock" aria-hidden="true" style="font-size: 20px;"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                        
+                        <li class="sidebar-item mb-4" >
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin_profile"
+                                aria-expanded="false" style="font-size: 20px;">
+                                <i class="fa fa-user" aria-hidden="true" style="font-size: 20px;"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
+                        </li>
                         
-                        <li class="sidebar-item">
+                        <li class="sidebar-item mb-4">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/mentors"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
+                                aria-expanded="false" style="font-size: 20px;">
+                                <i class="fa fa-users" aria-hidden="true" style="font-size: 20px;"></i>
                                 <span class="hide-menu">Mentors</span>
                             </a>
                         </li>
                      
 
-                        <li class="sidebar-item">
+                        <li class="sidebar-item mb-4">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/category"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
+                                aria-expanded="false" style="font-size: 20px;">
+                                <i class="fa fa-table" aria-hidden="true" style="font-size: 20px;"></i>
                                 <span class="hide-menu">Categories</span>
                             </a>
                         </li>
