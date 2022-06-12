@@ -63,7 +63,7 @@
 
             <div class="bg-secondary rounded p-5">
                 <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Contact The Mentor Directly</h3>
-                <form method="POST" action="{{route('mentorSingle.sendmail')}}">
+                <form method="POST" action="">
                 @csrf
                     <div class="form-group">
                         <label for="name">Name *</label>
