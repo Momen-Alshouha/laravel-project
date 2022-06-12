@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = category::all();
+        return view('admin.category',compact('data'));
     }
 
     /**
@@ -78,8 +79,10 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy($category)
     {
-        //
+        $m = category::find($category);
+        $m->delete();
+        return redirect()->back()->with('status', 'Category Deleted Successfully');
     }
 }

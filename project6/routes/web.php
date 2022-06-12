@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\MentorRequestController;
+use App\Http\Controllers\CategoryController;
  
 
 /*
@@ -54,23 +55,11 @@ Route::get('/dashboard', function () {
 });
 
 
-Route::get('/requests', function () {
-    return view('admin.requests');
-});
+Route::resource('/mentors', MentorRequestController::class);
 
+Route::resource('/category', CategoryController::class);
 
-Route::get('/category', function () {
-    return view('admin.category');
-});
-
-Route::get('/approved', function () {
-    return view('admin.Approved');
-});
-
-Route::get('/addcategory', function () {
-    return view('admin.addcategory');
-});
-
+Route::resource('/addcategory', CategoryController::class);
 
 
 Auth::routes();
