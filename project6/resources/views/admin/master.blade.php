@@ -38,9 +38,9 @@
                
                   
                   <div class="container">
-
+{{--  #FF6600 --}}
                       <a href="" class="text-decoration-none">
-                          <h1 class="m-0"  style="color: #fff"><span class="ml-1" style="color: orange">MENTOR</span>HUB</h1>
+                          <h1 class="m-0"  style="color: #fff"><span class="ml-1" style="color:#FF6600">MENTOR</span>HUB</h1>
                         </a>
                         
                     </div>

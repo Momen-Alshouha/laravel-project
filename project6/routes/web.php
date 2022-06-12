@@ -2,12 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
+
 use App\Http\Controllers\categoryShowController;
  
+
+use App\Http\Controllers\singleMentor;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,13 +43,18 @@ Route::get('/show', function () {
 
 
 Route::resource('profile',MentorController::class);
-// Route::post('runEdit',[RegisterController::class,'update']);
+
+
+Route::post('edit_profile',[MentorController::class,'update_mentor']);
+
+
 // Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
+ 
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
-Route::get('/editprofile', function () {
-    return view('pages.editprofile');
-});
+// Route::get('/editprofile', function () {
+//     return view('pages.editprofile');
+// });
 
 Route::get('/master', function () {
     return view('admin.master');
@@ -65,11 +75,12 @@ Route::get('/', [categoryShowController::class,'index']);
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 
-Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
+// Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
 
-
-
-Route::put('/editCat/{id}', [CategoryController::class,'update']);
+// Route::put('/editCat/{id}', [CategoryController::class,'update']);
+Route::get('/editCat', function () {
+    return view('admin.edit');
+});
 
 Auth::routes();
 
@@ -80,3 +91,13 @@ Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+ 
+
+
+
+
+// Route::get('/mentorSingle', function () {
+//     return view('pages.mentorSingle');
+// });
+
+Route::get('/mentorSingle', [singleMentor::class,'index']);

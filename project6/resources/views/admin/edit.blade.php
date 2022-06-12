@@ -62,7 +62,11 @@
         @endif
 
 
+
         <form action="{{ route('category.update',$categories->id) }}" method="POST" enctype="multipart/form-data">
+
+        <form action="" method="POST" enctype="multipart/form-data">
+
             @csrf
             @method('put')
             <input type='hidden'name='id' value="{{$categories->id}}">
