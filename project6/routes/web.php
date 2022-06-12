@@ -88,8 +88,8 @@ Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('ca
 
 
 
-Route::get('/mentorSingle', function () {
-    return view('pages.mentorSingle');
-});
+// Route::get('/mentorSingle', function () {
+//     return view('pages.mentorSingle');
+// });
 
-Route::get('/m', [singleMentor::class,'index']);
+Route::get('/mentorSingle', [singleMentor::class,'index']);
