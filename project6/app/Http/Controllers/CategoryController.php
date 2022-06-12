@@ -56,9 +56,9 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
-    {
-        //
+    public function edit(Category $category)
+    { $cat=category::find($category);
+       return view('admin.edit',compact('cat'));
     }
 
     /**
@@ -70,7 +70,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        
     }
 
     /**
@@ -85,4 +85,16 @@ class CategoryController extends Controller
         $m->delete();
         return redirect()->back()->with('status', 'Category Deleted Successfully');
     }
+
+
+    // public function delete($id)
+    // {
+    //    $del=category::find($id);
+    //    return view('admin.category',compact('del'));
+    //     // return redirect()->back()->with('status', 'Are you sure you want to delete this category? if deleted all mentros under category will be deleted as well!');
+    // }
+
+
+
+    
 }

@@ -4,105 +4,109 @@
 
 
 @section('content')
-<style>
-    .btn-primary {
-        color: #fff;
-        background-color: #FF6600;
-        border-color: #FF6600;
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
-    .btn-primary:hover {
-        color: #FF6600;
-        background-color: #fff;
-        border-color: #cc5200;
-    }
-</style>
-<div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <div class="page-breadcrumb bg-white">
-        <div class="row align-items-center">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Categories</h4>
-            </div>
-            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                <div class="d-md-flex">
-                    <ol class="breadcrumb ms-auto">
-                        <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
-                    </ol>
-                
-                    <a href="/addcategory" class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add Categories</a>
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #FF6600;
+            border-color: #FF6600;
+        }
+
+        .btn-primary:hover {
+            color: #FF6600;
+            background-color: #fff;
+            border-color: #cc5200;
+        }
+    </style>
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Categories</h4>
                 </div>
-            </div>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="d-md-flex">
+                        <ol class="breadcrumb ms-auto">
+                            <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
+                        </ol>
 
-    @if ($message= Session::get('success'))
-    <div class="alert alert-success" role="alert">
-        {{ $message }}
-    </div>
-    @elseif ($message= Session::get('status'))
-    <div class="alert alert-success" role="alert">
-        {{ $message }}
-    </div>
-    @endif
-    <!-- Container fluid  -->
-    <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="white-box">
-                    <h3 class="box-title">Categroies Tables</h3>
-
-                    <div class="table-responsive">
-                        <table class="table text-nowrap">
-                            <thead style="background-color: #343a40; color: #fff;">
-                                <tr>
-                                    <th class="border-top-0 " style="color: #fff;">Category Name</th>
-                                    <th class="border-top-0" style="color: #fff;">Category Image</th>
-                                    <th class="border-top-0" style="color: #fff;">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($data as $value)
-                                <tr>
-                                    <td>{{$value->category_name}}</td>
-                                    <td>{{$value->category_image}}</td>
-                                    <td>
-                                        <form method="post" action="{{route('category.destroy',$value->id)}}" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input class="btn btn-danger" type="submit" value="Delete" name="delete">
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <a href="/addcategory"
+                            class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add
+                            Categories</a>
                     </div>
                 </div>
             </div>
+            <!-- /.col-lg-12 -->
         </div>
         <!-- ============================================================== -->
-        <!-- End PAge Content -->
+        <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+            </div>
+        @elseif ($message = Session::get('status'))
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+ 
+            </div>
+        @endif
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Categroies Tables</h3>
+
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead style="background-color: #343a40; color: #fff;">
+                                    <tr>
+                                        <th class="border-top-0 " style="color: #fff;">Category Name</th>
+                                        <th class="border-top-0" style="color: #fff;">Category Image</th>
+                                        <th class="border-top-0" style="color: #fff;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $value)
+                                        <tr>
+                                            <td>{{ $value->category_name }}</td>
+                                            <td>{{ $value->category_image }}</td>
+                                            <td>
+                                                {{-- <form method="get" action="/editCat/{{ $value->id }}/edit" class="d-inline">
+                                            @csrf
+                                            @method('PUT')
+                                            <input class="btn btn-success" type="submit" value="Edit" name="edit">
+                                        </form> --}}
+
+                                                <form method="post" action="{{ route('category.destroy',$value->id) }}"
+                                                    class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input class="btn btn-danger" type="submit" value="Delete"
+                                                        name="delete">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
     </div>
-</div>
 @endsection
