@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\MentorRequestController;
+use App\Http\Controllers\CategoryController;
  
 
 /*
@@ -36,7 +38,11 @@ Route::get('/show', function () {
 
 
 Route::resource('profile',MentorController::class);
-// Route::post('runEdit',[RegisterController::class,'update']);
+
+
+Route::post('edit_profile',[MentorController::class,'update_mentor']);
+
+
 // Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
@@ -55,25 +61,24 @@ Route::get('/dashboard', function () {
 });
 
 
-Route::get('/requests', function () {
-    return view('admin.requests');
-});
+Route::resource('/mentors', MentorRequestController::class);
+
+Route::resource('/category', CategoryController::class);
+
+Route::get('/addcategory', [CategoryController::class,'create']);
+
+Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
 
 
-Route::get('/category', function () {
-    return view('admin.category');
-});
 
-Route::get('/approved', function () {
-    return view('admin.Approved');
-});
-
-Route::get('/addcategory', function () {
-    return view('admin.addcategory');
-});
-
-
+Route::put('/editCat/{id}', [CategoryController::class,'update']);
 
 Auth::routes();
 
+
+
+
 Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('auth');
+
+
+Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');

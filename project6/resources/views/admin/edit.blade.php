@@ -1,8 +1,6 @@
 @extends('admin.master')
 
 
-
-
 @section('content')
 
 <style>
@@ -64,13 +62,14 @@
         @endif
 
 
-        <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('c') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('put')
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control " style="height:50px" placeholder="Name">
+                        <input type="text" value=" $data->category_name" name="name" class="form-control " style="height:50px" placeholder="Name">
                     </div>
                 </div>
 
@@ -78,7 +77,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong class="form-label" for="customFile">Upload Category Image </strong>
-                        <input type="file" name="image" style="height:50px" class="form-control" id="customFile" />
+                        <input type="file"   value="$data->category_image" name="image" style="height:50px" class="form-control" id="customFile" />
                     </div>
                 </div>
 
@@ -87,13 +86,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <div class="form-group">
 
-                    <button type="submit" style="height:50px" class="btn btn-primary" id="customFile"> ADD Category</button>
+                    <button type="submit" style="height:50px" class="btn btn-primary" id="customFile"> Save Updates</button>
                 </div>
             </div>
 
         </form>
     </div>
 </div>
-
 
 @endsection
