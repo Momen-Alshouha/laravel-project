@@ -66,6 +66,7 @@
                         <div class="navbar-nav py-0">
                             <a href="/" class="nav-item nav-link ">Home</a>
                             <a href="{{route('profile.index')}}" class="nav-item nav-link">Mentors</a>
+                            <a href="{{route('posts.index')}}" class="nav-item nav-link">Ask</a>
                             <a href="/#about" class="nav-item nav-link">About</a>
                             <a href="#contact" class="nav-item nav-link ">Contact</a>
 

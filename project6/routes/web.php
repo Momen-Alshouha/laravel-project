@@ -11,7 +11,8 @@ use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\singleMentor;
 use App\Http\Controllers\categoryShowController;
-/*
+use App\Http\Controllers\PostControlle;
+use App\Http\Controllers\CommentController;/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -39,8 +40,8 @@ Route::get('/show', function () {
 // });
 
 Route::get('/',[categoryShowController::class,'index']);
-
-
+Route::resource('/posts', PostControlle::class);
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
 Route::resource('profile',MentorController::class);
 
 Route::resource('image',changeimage::class);
