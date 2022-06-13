@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\changeimage;
@@ -44,6 +45,8 @@ Route::get('/',[categoryShowController::class,'index']);
 Route::resource('profile',MentorController::class);
 
 Route::resource('image',changeimage::class);
+ 
+
 
 Route::post('edit_profile',[MentorController::class,'update_mentor']);
 
@@ -56,8 +59,8 @@ Route::post('edit_profile',[MentorController::class,'update_mentor']);
 //     return view('pages.editprofile');
 // });
 
-Route::get('/master', function () {
-    return view('admin.master');
+Route::get('/posts', function () {
+    return view('admin.posts');
 });
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
@@ -113,3 +116,12 @@ Route::resource('mentorSingle', singleMentor::class);
 
 Route::get('/mentorSingle', [singleMentor::class,'index']);
 Route::post('/sendmentor', [singleMentor::class,'sendmail']);
+
+
+
+Route::post('application',[ApplicationController::class,'store']);
+
+
+Route::get('/app', [ApplicationController::class,'index']);
+Route::delete('/app/{id}', [ApplicationController::class,'destroy']);
+
