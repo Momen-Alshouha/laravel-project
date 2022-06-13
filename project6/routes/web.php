@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\changeimage;
@@ -8,8 +9,8 @@ use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
- 
-
+use App\Http\Controllers\singleMentor;
+use App\Http\Controllers\categoryShowController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,9 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/layout', function () {
-    return view('pages.layout');
-});
+// Route::get('/layout', function () {
+//     return view('pages.layout');
+// });
 
 Route::get('/', function () {
     return view('pages.home');
@@ -37,6 +38,8 @@ Route::get('/show', function () {
 //     return view('pages.profile');
 // });
 
+Route::get('/',[categoryShowController::class,'index']);
+
 
 Route::resource('profile',MentorController::class);
 
@@ -46,11 +49,12 @@ Route::post('edit_profile',[MentorController::class,'update_mentor']);
 
 
 // Route::post('/home','HomeController@profileUpdate')->name('profileupdate');
+ 
 
 // Route::get('editprofile',[MentorController::class,'myedit']);
-Route::get('/editprofile', function () {
-    return view('pages.editprofile');
-});
+// Route::get('/editprofile', function () {
+//     return view('pages.editprofile');
+// });
 
 Route::get('/master', function () {
     return view('admin.master');
@@ -58,15 +62,26 @@ Route::get('/master', function () {
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
+// Route::get('/admin_profile', function () {
+//     return view('admin.admin_profile');
+// });
 
 // Route::resource('/ed', RegisteController::class);
+
+Route::get('/admin_profile', [AdminController::class,'show']);
+
+Route::put('/edit_admin/{admin}', [AdminController::class,'update']);
+
+
+
+Route::get('/dashboard', [AdminController::class,'index']);
 
 Route::resource('/mentors', MentorRequestController::class);
 
 Route::resource('/category', CategoryController::class);
+
+// Route::resource('/admin_profile', [AdminController::class,'show']);
+
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 
@@ -85,3 +100,16 @@ Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+ 
+
+
+
+
+Route::get('/mentorSingle', function () {
+    return view('pages.mentorSingle');
+});
+
+Route::resource('mentorSingle', singleMentor::class);
+
+Route::get('/mentorSingle', [singleMentor::class,'index']);
+Route::post('/sendmentor', [singleMentor::class,'sendmail']);

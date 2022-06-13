@@ -60,6 +60,7 @@
 
 
     <!-- Category Start -->
+   
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
@@ -67,42 +68,18 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
+                  @foreach ($data as $data)
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/img/gabriel-heinzer-EUzk9BIEq6M-unsplash.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('/uploads/Category/'.$data->category_image) }}" alt="">
                         <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Web Design</h4>
+                            <h4 class="text-white font-weight-medium">{{$data->category_name}}</h4>
                              
                         </a>
                     </div>
+                     @endforeach
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="img/aryan-dhiman-iGLLtLINSkw-unsplash.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Development</h4>
-                             
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="img/vipul-jha-a4X1cdC1QAc-unsplash.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Game Design</h4>
-                            
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="img/gabriel-heinzer-g5jpH62pwes-unsplash.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Apps Design</h4>
-                         
-                        </a>
-                    </div>
-                </div>
+               
               
                 </div>
             </div>

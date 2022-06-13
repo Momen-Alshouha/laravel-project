@@ -1,6 +1,7 @@
 @extends('admin.master')
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 @section('content')
@@ -83,10 +84,10 @@
                                     <td>{{$value->mentor_category}}</td>
                                     <td>{{Str::limit($value->mentor_about,50)}}</td>
                                     <td>
-                                        <form method="post" action="{{route('mentors.destroy',$value->id)}}" class="d-inline">
+                                        <form method="post" action="{{ route('mentors.destroy',$value->id) }}" class="d-inline">
                                             @csrf
-                                            @method('DELETE')
-                                            <input class="btn btn-danger" type="submit" value="Delete" name="delete">
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -109,4 +110,27 @@
         <!-- ============================================================== -->
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        swal({
+                title: `Are you sure you want to delete this mentor?`,
+                // text: "If you delete this, it will delete all mentors under this category.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+    });
+</script>
+
 @endsection
