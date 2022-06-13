@@ -93,7 +93,7 @@
                                     <li style="margin-top: 15px;" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;
-                                                    " class="btn btn-outline-primary ml-2 dropdown-toggle"
+                                                        " class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 {{ __(Auth::user()->name) }}
@@ -103,7 +103,7 @@
                                                     href="{{ route('profile.edit', Auth::user()->id) }}">my profile</a>
                                                 <a class="dropdown-item" style="color: #ff6600af "
                                                     href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
+                                                              document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
 
@@ -115,29 +115,12 @@
                                         </div>
                                     </li>
 
-                                    {{-- <a class="nav-link " href="{{ route('profile.edit',Auth::user()->id) }}"
-                                    role="button">
-                                    {{ __(Auth::user()->name)}}
-                                </a> --}}
 
 
 
-                                    {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
-                                    {{-- <li class="nav-item">
-                                        <a style="color: #ff6600af " class="nav-link" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-    
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>
-                                    </li> --}}
 
                                 @endguest
-                            
+
                             </ul>
 
                         </div>
@@ -183,7 +166,8 @@
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Links</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="{{ route('profile.index') }}"><i class="fa fa-angle-right mr-2"></i>Mentors</a>
+                            <a class="text-white mb-2" href="{{ route('profile.index') }}"><i
+                                    class="fa fa-angle-right mr-2"></i>Mentors</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
 
