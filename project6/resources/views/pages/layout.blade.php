@@ -72,6 +72,7 @@
                         <div class=" navbar-nav py-1 px-5 ">
                             <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-5"><h5>Home</h5></a>
                             <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-5"><h5>Mentors</h5></a>
+                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-5"><h5>Ask</h5></a>
                             <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-5"><h5>About</h5></a>
                             <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
 
@@ -81,7 +82,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 13px" class="nav-link pr-5"
+                                            <a style="margin-top: 13px" class="nav-link pr-4"
                                                 href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
