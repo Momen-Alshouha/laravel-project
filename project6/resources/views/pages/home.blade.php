@@ -204,12 +204,10 @@
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
                         <h1>Innovative Way To Learn</h1>
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo
-                        dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus
-                        gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita
-                        consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor
-                        justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam
-                        ipsum stet</p>
+                    <p>"Effectively influence civil society, all partners and stakeholders, through charitable work and
+                        collective social responsibility "<br>
+                        The MentorHUB platform is national and aims to unify efforts in the fields of volunteerism and youth engagement at all levels. By building partnerships with CBOs, NGOs, public agencies and private companies, the platform offers as many volunteer opportunities as possible with the belief that volunteering brings new skills to young people,</p>
+           
                     <a href="{{ route('profile.index') }}"
                         class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View our mentors</a>
                 </div>
