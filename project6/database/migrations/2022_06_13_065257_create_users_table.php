@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->text('img');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('Phone_number')->unique();
+            
             $table->integer('mentor_category')->unsigned();
             $table->string('category_name');
 
