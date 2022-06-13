@@ -96,7 +96,7 @@
                                                 {{ __(Auth::user()->name) }}
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a style="cursor:pointer" class="dropdown-item"
+                                                <a class="dropdown-item"
                                                     href="{{ route('profile.edit', Auth::user()->id) }}">My profile</a>
                                                 <a class="dropdown-item" style="color: #ff6600c2 "
                                                     href="{{ route('logout') }}" onclick="event.preventDefault();

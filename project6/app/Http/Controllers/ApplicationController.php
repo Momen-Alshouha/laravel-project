@@ -14,7 +14,8 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        //
+       $data=Application::all();
+       return view('admin.applications',compact('data'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,8 +35,9 @@ class ApplicationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        Application::create($request->all());
+        return redirect()->back()->with('success','Application Submitted Successfully!');
     }
 
     /**
@@ -78,8 +80,10 @@ class ApplicationController extends Controller
      * @param  \App\Models\Application  $application
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Application $application)
+    public function destroy($application)
     {
-        //
+        $app=Application::find($application);
+         $app->delete();
+         return redirect()->back()->with('success','Application has been ignored');
     }
 }
