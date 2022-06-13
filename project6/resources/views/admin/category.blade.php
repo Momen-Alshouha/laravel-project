@@ -93,6 +93,7 @@
                                         @method('PUT')
                                         <input class="btn btn-success" type="submit" value="Edit" name="edit">
                                         </form> -->
+                                        <a href="/editCat/{{$value->id}}" class="btn btn-success btn-flat ">Edit</a>
 
                                         <form method="post" action="{{ route('category.destroy',$value->id) }}" class="d-inline">
                                             @csrf
