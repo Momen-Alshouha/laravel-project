@@ -82,7 +82,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 13px" class="nav-link pr-4"
+                                            <a style="margin-top: 13px" class="nav-link pr-2"
                                                 href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
@@ -94,12 +94,9 @@
                                         </li>
                                     @endif
                                 @else
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="{{route('course.create') }}">{{ __('Add Course') }}</a>
-                                </li>
+                             
                                     <li style="margin-top: 15px;" class="nav-item ">
-                                    <li style="margin-top: 15px;margin-left: 470px" class="nav-item ">
+                                    <li style="margin-top: 25px;margin-left: 10px" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
