@@ -40,6 +40,7 @@ class CategoryController extends Controller
         $request->validate(['category_name'=>'min:3|required', 'category_image'=>'mimes:jpg,png|image']);
         $category= new category();
         $category->category_name=$request->category_name;
+          $category->category_description=$request->category_description;
         if($request->hasfile('category_image')){
             $file=$request->file('category_image');
             $ex=$file->getClientOriginalExtension();
@@ -95,6 +96,7 @@ class CategoryController extends Controller
             $category->category_image=$filename;
         }
         $category->category_name=$request->category_name;
+         $category->category_description=$request->category_description;
         $category->save();
         return redirect('category')->with('flash_message', 'category Updated!');
     }

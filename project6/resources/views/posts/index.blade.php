@@ -10,9 +10,9 @@
             <!--MDB Cards-->
             <div class="container">
                 <div class="text-center darken-grey-text mb-4">
-                    <h1 style='margin-top:100px'>All Questions</h1>
+                    <h1 style='margin-top:45px'>All Questions</h1>
                     <a href="{{ route('posts.create') }}" class="btn "
-                        style="margin-top:40px;background:#FF6600;color:white">Create Post</a>
+                        style="margin-top:40px;background:#FFB452;color:white">Ask your question</a>
                 </div>
                 <!-- Grid row -->
                 <div class="row ">
@@ -43,7 +43,7 @@
                                     text-overflow: ellipsis;' class="card-text white-text">{{ $post->body }}</p>
                                     <!-- <a href="#" class="btn btn-info my-3">Read more</a> -->
                                     <a href="{{ route('posts.show', $post->id) }}" class="btn "
-                                        style='background:#FFB452;color'>View Post</a>
+                                        style='background:#FFB452;color:white'>View Post</a>
                                 </div>
                             </div>
                             <!--/.Card-->

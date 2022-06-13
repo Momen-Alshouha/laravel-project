@@ -88,6 +88,7 @@
                                 alt="">
                             <a class="cat-overlay text-white text-decoration-none" href="">
                                 <h4 class="text-white font-weight-medium">{{ $data->category_name }}</h4>
+                                 <p class="text-white font-weight-medium">{{ $data->category_description }}</p>
                             </a>
                         </div>
                 @endforeach

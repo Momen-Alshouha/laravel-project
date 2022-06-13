@@ -13,7 +13,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\singleMentor;
 use App\Http\Controllers\categoryShowController;
 use App\Http\Controllers\PostControlle;
-use App\Http\Controllers\CommentController;/*
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\postAdminController;/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -80,6 +81,7 @@ Route::get('/dashboard', [AdminController::class,'index']);
 Route::resource('/mentors', MentorRequestController::class);
 
 Route::resource('/category', CategoryController::class);
+Route::resource('/post', postAdminController::class);
 
 // Route::resource('/admin_profile', [AdminController::class,'show']);
 
