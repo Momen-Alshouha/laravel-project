@@ -38,7 +38,7 @@ class PostControlle extends Controller
         ]);
        
         $input = $request->all();
-        $input['user_id'] = auth()->user()->id;
+       
         Post::create($input);
     
         return redirect()->route('posts.index');

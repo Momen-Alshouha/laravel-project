@@ -6,7 +6,7 @@
             <a href="{{ route('posts.create') }}" class="btn btn-success" style="float: right">Create Post</a>
             <table class="table table-bordered">
                 <thead>
-                    <th width="80px">Title Question</th>
+                    <th width="80px"> Question</th>
                  
                   
                 </thead>

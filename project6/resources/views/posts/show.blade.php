@@ -168,7 +168,7 @@
                 src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="avatar" width="60"
                 height="60" />
               <div>
-                <!-- <h6 class="fw-bold text-primary mb-1">{{ $post->user->name }}</h6> -->
+                
                  <h6 class="fw-bold  mb-1"style='color:#FFB452'>user</h6>
                 <p class="text-muted middle mb-0">
                  {{ $post->title }}

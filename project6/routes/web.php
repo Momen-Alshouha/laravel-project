@@ -60,9 +60,6 @@ Route::post('edit_profile',[MentorController::class,'update_mentor']);
 //     return view('pages.editprofile');
 // });
 
-Route::get('/posts', function () {
-    return view('admin.posts');
-});
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
