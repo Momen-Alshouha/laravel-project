@@ -94,10 +94,7 @@
                                         </li>
                                     @endif
                                 @else
-                                <li class="nav-item">
-                                    <a style="margin-top: 13px" class="nav-link"
-                                        href="{{route('course.create') }}">{{ __('Add Course') }}</a>
-                                </li>
+                                
                                     <li style="margin-top: 15px;" class="nav-item ">
                                     <li style="margin-top: 15px" class="nav-item ">
                              
@@ -197,8 +194,12 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-white mb-2" href="{{ route('profile.index') }}"><i class="fa fa-angle-right mr-2"></i>Mentors</a>
-                            <a class="text-white mb-2" href="/#about"><i class="fa fa-angle-right mr-2"></i>About</a>
-                            {{-- <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a> --}}
+                            <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Ask</a>
+                           
+                            <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>About</a>
+
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+
 
                         </div>
                     </div>
@@ -206,8 +207,7 @@
             </div>
             <div class="col-lg-5 col-md-12 mb-5">
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu
-                    kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <p>Subscribe to our newsletter</p>
                 <div class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control border-light" style="padding: 30px;"
