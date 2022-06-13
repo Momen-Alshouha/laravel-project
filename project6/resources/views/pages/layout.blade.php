@@ -10,6 +10,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Dancing+Script&family=Holtwood+One+SC&family=Lobster&family=Monoton&family=Montserrat:ital,wght@0,100;0,200;1,100&family=Ms+Madi&family=Satisfy&family=Shadows+Into+Light&family=Square+Peg&family=Staatliches&display=swap"
+        rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Dancing+Script&family=Holtwood+One+SC&family=Lobster&family=Monoton&family=Montserrat:ital,wght@0,100;0,200;1,100&family=Ms+Madi&family=Satisfy&family=Shadows+Into+Light&family=Square+Peg&family=Staatliches&display=swap" rel="stylesheet">
 
 
@@ -40,6 +45,10 @@
             <div id="top" class="col-lg-3">
                 <a href="/" class="text-decoration-none">
                     <h2 class="m-0"><span>
+
+                            <span class="text-primary"
+                                style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
+
                             <span class="text-primary" style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
                 </a>
             </div>
@@ -113,16 +122,17 @@
     <!-- Navbar Start -->
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
             <!-- <div  class="col-lg-3 d-none d-lg-block">
                 <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"
                     data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
                     <h5 class=" m-4"><i class="fa fa-book mr-2"></i>Categories</h5>
                     <i class="fa fa-angle-down text-primary "></i>
                 </a>
-                <nav  class="collapse position-absolute  navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
+                <nav class="collapse position-absolute  navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
                     id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
-                    <div  class="navbar-nav w-100">
-                        <div class="nav-item dropdown"> 
+                    <div class="navbar-nav w-100">
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Web Design <i
                                     class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
@@ -138,6 +148,92 @@
                 </nav>
             </div> -->
 
+                <nav style="margin-left: 100px"
+                    class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav py-0">
+                            <a href="/" class="nav-item nav-link ">Home</a>
+                            <a href="{{route('profile.index')}}" class="nav-item nav-link">Mentors</a>
+                            <a href="/#about" class="nav-item nav-link">About</a>
+                            <a href="#contact" class="nav-item nav-link ">Contact</a>
+
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ms-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Sign in') }}</a>
+                                </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Join us') }}</a>
+                                </li>
+                                @endif
+                                @else
+                                
+                                <li style="margin-top: 15px;" class="nav-item ">
+                                    <div  class="nav-item dropdown">
+                                        <button style="text-transform: uppercase;
+                                        " class="btn btn-outline-primary ml-2 dropdown-toggle" class="btn btn-secondary " type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            {{ __(Auth::user()->name)}}
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="{{ route('profile.edit',Auth::user()->id) }}">my profile</a>
+                                            <a class="dropdown-item" style="color: #ff6600af "
+                                                href="{{ route('logout') }}" onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                {{-- <a class="nav-link " href="{{ route('profile.edit',Auth::user()->id) }}"
+                                    role="button">
+                                    {{ __(Auth::user()->name)}}
+                                </a> --}}
+
+
+
+                                {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                                    {{-- <li class="nav-item">
+                                        <a style="color: #ff6600af " class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li> --}}
+
+                                    @endguest
+                            </ul>
+
+                        </div>
+                        {{-- <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a> --}}
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
     <!-- Navbar End -->
