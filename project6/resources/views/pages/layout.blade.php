@@ -58,21 +58,19 @@
             <div class="col-lg-9 ">
 
                 <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
+                    <a  href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-1 "><span class="text-primary">MENTOR</span>HUB</h1>
                     </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav py-0">
-                            <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="{{ route('profile.index') }}" class="nav-item nav-link">Mentors</a>
-                            <a href="/#about" class="nav-item nav-link">About</a>
-                            <a href="#contact" class="nav-item nav-link ">Contact</a>
+                    
+                    <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class=" navbar-nav py-1 px-5 ">
+                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-5"><h5>Home</h5></a>
+                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-5"><h5>Mentors</h5></a>
+                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-5"><h5>About</h5></a>
+                            <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
 
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ms-auto">
+                            <ul style="margin-top: 17px;margin-left: 470px"  class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
