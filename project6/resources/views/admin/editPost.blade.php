@@ -88,9 +88,9 @@
                     <div class="form-group">
                         <strong>description:</strong>
                         <select name='active'>
-                        <option value=''></option>
-                        <option value='{{$post->active}}'>{{$post->active}}</option>
+                        <option value='{{$post->active}}'></option>
                          <option value='active'>active</option>
+                          <option value='non-active'>non-active</option>
                         <select>
                     </div>
                 </div>
