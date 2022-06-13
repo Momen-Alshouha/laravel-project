@@ -32,18 +32,7 @@
 
 
                         </div>
-                        <div class="col-md-6">
-                            <div class="media">
-                                <strong>Phone Numbe: </strong>&nbsp;
-                                <p>{{ $mentor->Phone_number }}</p>
-                            </div>
-
-                            <div class="media">
-                                <strong>Link/Contacts: </strong>&nbsp;&nbsp;
-                                <p>skype.0404</p>
-                            </div>
-
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -62,25 +51,36 @@
         <div class="container " style="margin-top: 100px">
 
             <div class="bg-secondary rounded p-5">
-                <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Contact The Mentor Directly</h3>
+                <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Send An Application</h3>
                 <form method="POST" action="">
                 @csrf
                     <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" name="name" class="form-control border-0" id="name">
+                        <label for="name">Name*</label>
+                        <input type="text" name="name" class="form-control border-0"  required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" name="email" class="form-control border-0" id="email">
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" class="form-control border-0"   required>
                     </div>
-
+                    <div class="form-group">
+                        <label for="name">Age*</label>
+                        <input type="number" name="age" class="form-control border-0"  required>
+                    </div>
 
                     <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="msg" cols="30" rows="5" class="form-control border-0"></textarea>
+                        <label for="name">Field of Education*</label>
+                        <input type="text" name="education" class="form-control border-0"  required>
                     </div>
+
+                  
+
+                    <div class="form-group">
+                        <label for="message">What is the purpose of Contacting the Mentor*</label>
+                        <textarea   name="why" cols="30" rows="5" class="form-control border-0" required></textarea>
+                    </div>
+
                     <div class="form-group mb-0">
-                        <input type="submit" value="Send Message" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
+                        <input type="submit" value="Submit" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
                     </div>
                 </form>
                 @if ($message = Session::get('success'))
