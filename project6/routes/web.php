@@ -13,6 +13,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\singleMentor;
 use App\Http\Controllers\categoryShowController;
 use App\Http\Controllers\PostControlle;
+use App\Http\Controllers\sendEmail;
+
 use App\Http\Controllers\CommentController;/*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +29,7 @@ use App\Http\Controllers\CommentController;/*
 // Route::get('/layout', function () {
 //     return view('pages.layout');
 // });
-
+Route::resource('send-mail', sendEmail::class);
 Route::get('/', function () {
     return view('pages.home');
 });

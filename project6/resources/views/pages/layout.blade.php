@@ -94,11 +94,11 @@
                                     @endif
                                 @else
                                 <li class="nav-item">
-                                    <a class="nav-link"
+                                    <a style="margin-top: 13px" class="nav-link"
                                         href="{{route('course.create') }}">{{ __('Add Course') }}</a>
                                 </li>
                                     <li style="margin-top: 15px;" class="nav-item ">
-                                    <li style="margin-top: 15px;margin-left: 470px" class="nav-item ">
+                                    <li style="margin-top: 15px" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
