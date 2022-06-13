@@ -70,24 +70,24 @@
                             <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
 
                             <!-- Right Side Of Navbar -->
-                            <ul style="margin-top: 17px;margin-left: 470px"  class="navbar-nav ms-auto">
+                            <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link"
-                                                href="{{ route('login') }}">{{ __('Sign in') }}</a>
+                                        <li  class="nav-item">
+                                            <a style="margin-top: 13px" class="nav-link pr-5"
+                                                href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="nav-link"
-                                                href="{{ route('register') }}">{{ __('Join us') }}</a>
+                                            <a style="margin-top: 13px" class="nav-link"
+                                                href="{{ route('register') }}"><h5>{{ __('Join us') }}</h5></a>
                                         </li>
                                     @endif
                                 @else
-                                    <li style="margin-top: 15px;" class="nav-item ">
+                                    <li style="margin-top: 15px;margin-left: 470px" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;
                                                     " class="btn btn-outline-primary ml-2 dropdown-toggle"
@@ -96,9 +96,9 @@
                                                 {{ __(Auth::user()->name) }}
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item"
-                                                    href="{{ route('profile.edit', Auth::user()->id) }}">my profile</a>
-                                                <a class="dropdown-item" style="color: #ff6600af "
+                                                <a style="cursor:pointer" class="dropdown-item"
+                                                    href="{{ route('profile.edit', Auth::user()->id) }}">My profile</a>
+                                                <a class="dropdown-item" style="color: #ff6600c2 "
                                                     href="{{ route('logout') }}" onclick="event.preventDefault();
                                                           document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
@@ -181,8 +181,8 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-white mb-2" href="{{ route('profile.index') }}"><i class="fa fa-angle-right mr-2"></i>Mentors</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                            <a class="text-white mb-2" href="/#about"><i class="fa fa-angle-right mr-2"></i>About</a>
+                            {{-- <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a> --}}
 
                         </div>
                     </div>
