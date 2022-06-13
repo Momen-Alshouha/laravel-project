@@ -134,6 +134,7 @@
                         form.submit();
                     }
                 });
+                
         });
     </script>
 @endsection
