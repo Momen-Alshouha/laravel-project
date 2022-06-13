@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
@@ -113,3 +113,18 @@ Route::resource('mentorSingle', singleMentor::class);
 
 Route::get('/mentorSingle', [singleMentor::class,'index']);
 Route::post('/sendmentor', [singleMentor::class,'sendmail']);
+
+Route::resource('course', CourseController::class);
+
+
+Route::get('/home', function () {
+    return view('pages.home');
+});
+
+Route::get('/create_course', function () {
+    return view('pages.create_course');
+});
+
+
+
+

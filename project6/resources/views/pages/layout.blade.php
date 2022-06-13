@@ -22,7 +22,7 @@
 
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="https://www.nicepng.com/png/full/11-118527_m-infoline-logo-m-orange.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -89,10 +89,13 @@
                                         </li>
                                     @endif
                                 @else
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{route('course.create') }}">{{ __('Add Course') }}</a>
+                                </li>
                                     <li style="margin-top: 15px;" class="nav-item ">
                                         <div class="nav-item dropdown">
-                                            <button style="text-transform: uppercase;
-                                                    " class="btn btn-outline-primary ml-2 dropdown-toggle"
+                                            <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 {{ __(Auth::user()->name) }}
