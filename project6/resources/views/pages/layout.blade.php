@@ -70,19 +70,11 @@
                     
                     <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class=" navbar-nav py-1 px-5 ">
-<<<<<<< HEAD
                             <a  style="margin-top: 30px" href="/" class="nav-item nav-link "><h5>Home</h5></a>
                             <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link "><h5>Mentors</h5></a>
                              <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link "><h5>Ask</h5></a>
                             <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link "><h5>About</h5></a>
                             <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link "><h5>Contact</h5></a>
-=======
-                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-5"><h5>Home</h5></a>
-                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-5"><h5>Mentors</h5></a>
-                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-5"><h5>Ask</h5></a>
-                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-5"><h5>About</h5></a>
-                            <a  style="margin-top: 30px" href="/#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
->>>>>>> ec42dae036dfe8d9ef773c7a24c84e1304cd6822
 
                             <!-- Right Side Of Navbar -->
                             <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
@@ -90,7 +82,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link pr-5"
+                                            <a style="margin-top: 12px" class="nav-link "
                                                 href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
