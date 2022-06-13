@@ -26,7 +26,7 @@
 
               <div class="d-flex justify-content-center mb-2">
                 <a href="{{ route('profile.show',Auth::user()->id) }}" type="button" class="btn btn-primary">Edit Profile </a>
-                <button type="button" class="btn btn-outline-primary ml-2">Delete Profile</button>
+                {{-- <button type="button" class="btn btn-outline-primary ml-2">Delete Profile</button> --}}
               </div>
             </div>
           </div>
