@@ -28,7 +28,7 @@
                   </div>
                 </div><br>
 
-                <input class="btn btn-outline-primary ml-2" type="submit" value="Save">
+                <input class="btn btn-primary ml-2" type="submit" value="Save">
                 </form>
                {{-- end change image --}}
 
@@ -37,7 +37,7 @@
               <p class="text-muted mb-1">{{Auth::user()->mentor_about}}</p>
               
              
-                <a href="{{ route('profile.edit',Auth::user()->id) }}"  type="button" class="btn btn-primary" >Back To Profile </a>
+                <a href="{{ route('profile.edit',Auth::user()->id) }}"  type="button" class="btn btn-outline-primary" >Back To Profile </a>
               </div>
             </div>
           </div>
