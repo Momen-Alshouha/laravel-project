@@ -99,7 +99,7 @@
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                         </form>
-                                        <a href="/editCat/{{$value->id}}" class="btn btn-primary btn-flat ">Update</a>
+                                        <a href="{{ route('category.edit',$value->id) }}" class="btn btn-primary btn-flat ">Update</a>
                                     </td>
                                 </tr>
                                 @endforeach

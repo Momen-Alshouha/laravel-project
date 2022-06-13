@@ -60,8 +60,8 @@ Route::get('/master', function () {
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-// Route::get('/admin_profile', function () {
-//     return view('admin.admin_profile');
+// Route::get('/editc', function () {
+//     return view('admin.edit');
 // });
 
 Route::get('/admin_profile', [AdminController::class,'show']);
@@ -81,11 +81,11 @@ Route::resource('/category', CategoryController::class);
 
 Route::get('/addcategory', [CategoryController::class,'create']);
 
-Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
+// Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
 
 
 
-Route::put('/editCat/{id}', [CategoryController::class,'update']);
+// Route::post('/editCat/{id}', [CategoryController::class,'update']);
 
 Auth::routes();
 
@@ -101,9 +101,9 @@ Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('ca
 
 
 
-Route::get('/mentorSingle', function () {
-    return view('pages.mentorSingle');
-});
+// Route::get('/mentorSingle', function () {
+//     return view('pages.mentorSingle');
+// });
 
 Route::resource('mentorSingle', singleMentor::class);
 
