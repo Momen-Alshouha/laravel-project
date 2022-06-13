@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\changeimage;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserM;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,7 @@ Route::get('/show', function () {
 
 Route::resource('profile',MentorController::class);
 
+Route::resource('image',changeimage::class);
 
 Route::post('edit_profile',[MentorController::class,'update_mentor']);
 
@@ -60,6 +62,7 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
+// Route::resource('/ed', RegisteController::class);
 
 Route::resource('/mentors', MentorRequestController::class);
 

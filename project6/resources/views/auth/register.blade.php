@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('JOIN TO OUR MENTORS') }}</div>
+                <div class="card-header"><h5>{{ __('JOIN OUR MENTORS') }}</h5></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -62,11 +62,21 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="ctg" class="col-md-4 col-form-label text-md-end">{{ __('Majority') }}</label>
+                            <label for="ctg" class="col-md-4 col-form-label text-md-end">{{ __('Field') }}</label>
 
                             <div class="col-md-6">
+                                @php
+                                     use App\Models\category;
+                                     $cat = category::all();
+
+                                @endphp
+
                                 <select id="ctg" class="form-control" name="ctg" value="{{ old('ctg') }}"  required>
-                                    <option value="1">aa </option>
+                                    @foreach ($cat as $allCat)
+
+                                    <option value="1">{{$allCat->category_name}}</option>
+                                    @endforeach
+
                                 </select>
 
                                 @error('email')
@@ -80,7 +90,7 @@
                             <label for="desc" class="col-md-4 col-form-label text-md-end">{{ __('Why do you want join us') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="desc" class="form-control" name="desc" value="{{ old('desc') }}" placeholder="write " required>
+                                <textarea rows="6" id="desc" class="form-control" name="desc" value="{{ old('desc') }}" placeholder="write " required>
                                 </textarea>
 
                                 @error('desc')

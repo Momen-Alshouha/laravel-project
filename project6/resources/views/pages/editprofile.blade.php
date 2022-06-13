@@ -11,8 +11,27 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="mentor image"
-                class="rounded-circle img-fluid" style="width: 150px;">
+              <img style="width: 180px;border-radius: 15%" src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="mentor image"
+                class=" img-fluid" > <br><br>
+
+                {{-- change image --}}
+                <form method="POST" action="{{  route('image.update',Auth::user()->id) }} "enctype="multipart/form-data">
+                  @method('PUT')
+
+                  @csrf
+                <div class="input-group">
+              
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="img" id="img" 
+                      aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01" >Change image</label>
+                  </div>
+                </div><br>
+
+                <input class="btn btn-outline-primary ml-2" type="submit" value="Save">
+                </form>
+               {{-- end change image --}}
+
               <h5 class="my-3">{{Auth::user()->name}}</h5>
               <h5 class="my-3">{{Auth::user()->email}}</h5>
               <p class="text-muted mb-1">{{Auth::user()->mentor_about}}</p>
@@ -52,15 +71,18 @@
         <div class="col-lg-8">
           <div class="card mb-4">
             <div class="card-body">
-                <form method="POST" action="{{ route('profile.update',Auth::user()->id) }}">
+
+                <form method="POST" action="{{  route('profile.update',Auth::user()->id) }} "enctype="multipart/form-data">
+
+                  @method('PATCH')
                   @csrf
-                  @method('PUT')
+
               <div class="row">
                 <div class="col-sm-3">
                   <label class="mb-0">Full Name</label>
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" type="text" name="name"  id="name"  value="{{Auth::user()->name}}" class="text-muted mb-0"> 
+                  <input class="form-control" type="text" name="name"  id="name"  value="{{Auth::user()->name}}" class="mb-0"> 
                 </div>
               </div>
               <hr>
@@ -76,7 +98,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <label class="mb-0">password</label>
+                  <label class="mb-0">Password</label>
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" type="password" name="password"  id="email"  value="{{Auth::user()->password}}" class="text-muted mb-0"> 
@@ -86,12 +108,18 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <label class="mb-0">category</label>
+                  <label class="mb-0">Field</label>
                 </div>
                 <div class="col-sm-9">
+                    @php
+                    use App\Models\category;
+                    $cat = category::all();
+                     @endphp
                  <select class="form-control" name="mentor_category" id="">
-                  <option value="1">web developer</option>
-                 </select>
+                  @foreach ($cat as $allCat)
+
+                  <option value="1">{{$allCat->category_name}}</option>
+                  @endforeach                 </select>
                 </div>
               </div>
               <hr>
@@ -100,21 +128,21 @@
                   <label class="mb-0">About</label>
                 </div>
                 <div class="col-sm-9">
-                  <textarea name="mentor_about" id="" cols="30" rows="10">{{Auth::user()->mentor_about}}</textarea> 
+                  <textarea name="mentor_about" id="" rows="4" cols="50">{{Auth::user()->mentor_about}}</textarea> 
                   
                 </div>
               </div>
 
-              <hr>
-              <div class="row">
+              {{-- <div class="row">
                 <div class="col-sm-3">
                   <label class="mb-0">change image</label>
                 </div>
                 <div class="col-sm-9">
-                 <input type="file" name="img" id="">
+                 <input type="file" name="img" id="img" value="{{Auth::user()->img}}">
                   
                 </div>
-              </div>
+              </div> --}}
+
               {{-- <div class="row">
                 <div class="col-sm-3">
                   <label class="mb-0">Phone</label>
@@ -123,12 +151,10 @@
                     <input type="text" name="phonenumber" class="text-muted mb-0"> 
  
                 </div> --}}
-                <hr>
                 
-             <br>
-                <input type="submit" class="btn btn-outline-primary ml-2" value="update">
               </div>
-             
+              <input style="width:130px;margin-left:45%" type="submit" class="btn btn-primary" value="Update">
+
            
              <br><br>
 

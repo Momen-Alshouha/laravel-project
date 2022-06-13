@@ -65,7 +65,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         // $path = request()->file('img')->storeAs('images',$data->file('img')->getClientOriginalName());
-
+        $filename='';
         if(request()->file('img'))
         {
             $file =request()->file('img');
@@ -75,9 +75,7 @@ class RegisterController extends Controller
             // request()->file('img')->storeAs('images/',$filename);
             $file->move('uploads/images/',$filename);
 
-            // $data->img = $filename;
         }   
-       
 
         return User::create([
             'name' => $data['name'],
@@ -86,13 +84,14 @@ class RegisterController extends Controller
             'mentor_category'=>$data['ctg'],
             'mentor_about'=>$data['desc'],
 
-            'img'=> $data['img']
+            'img'=> $filename
         ]);
         return view('/')
               ->with('success','We will review your account,Thanks') ;
     }
     public function update(Request $request, User $mentor)
     {
+        
         $mentor->update($request->all());
         // $id = $mentor;
         // $user = User::find($mentor);
