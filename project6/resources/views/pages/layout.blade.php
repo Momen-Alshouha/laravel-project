@@ -68,7 +68,7 @@
                         <div class="navbar-nav py-0">
            
                     
-                    <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div style="margin-left:200px" class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class=" navbar-nav py-1 px-5 ">
                             <a  style="margin-top: 30px" href="/" class="nav-item nav-link "><h5>Home</h5></a>
                             <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link "><h5>Mentors</h5></a>
@@ -100,7 +100,7 @@
                              
                                     <li style="margin-top: 15px;" class="nav-item ">
                                     <li style="margin-top: 25px;margin-left: 10px" class="nav-item ">
-                                        <div class="nav-item dropdown">
+                                        <div class="nav-item dropdown" style="margin-left:800px">
                                             <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
