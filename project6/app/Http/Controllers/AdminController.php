@@ -48,9 +48,9 @@ class AdminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(admin $admin)
+    public function show(User $admin)
     {
-        $admin = admin::find(1);
+        $admin = User::find(3);
         return view('admin.admin_profile', compact('admin'));
     }
 
@@ -72,13 +72,13 @@ class AdminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, admin $admin)
+    public function update(Request $request, User $admin)
     {
         $admin->exists = true;
 
-        $admin->admin_name = $request->post('name');
-        $admin->admin_email = $request->post('email');
-        $admin->admin_password = $request->post('pass');
+        $admin->name = $request->post('name');
+        $admin->email = $request->post('email');
+        $admin->password = $request->post('pass');
 
         $admin->save();
 

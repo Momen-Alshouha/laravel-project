@@ -134,7 +134,7 @@
                         <li class="sidebar-item mb-4">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/posts"
                                 aria-expanded="false" style="font-size: 20px;">
-                                <i class="material-icons" aria-hidden="true" style="font-size: 20px;"></i>
+                                <i class="fa fa-comment" aria-hidden="true" style="font-size: 20px;"></i>
                                 <span class="hide-menu">Posts</span>
                             </a>
                         </li>

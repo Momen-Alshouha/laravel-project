@@ -13,21 +13,21 @@ class singleMentor extends Controller
 {
     public function index()
     {
-       $mentor=User::find(1);
+       $mentor=User::find(4);
        return view('pages.mentorSingle',compact('mentor'));
     }
 
     public function sendmail(Request $request){
 
-        // $mentor=User::find($request->id);
-        $details=[
-            'name' => $request->name,
-            'email' => $request->email,
-            'message' => $request->msg,
-        ];
-        Mail::to('ruba.h.almasri@gmail.com')->send(new ContactMentorMail($details));
+        // // $mentor=User::find($request->id);
+        // $details=[
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'message' => $request->msg,
+        // ];
+        // Mail::to( ')->send(new ContactMentorMail($details));
 
-        return redirect()->route('mentorSingle.index')->with('success','Message Send Successfully');
+        // return redirect()->route('mentorSingle.index')->with('success','Message Send Successfully');
 
     }
 
