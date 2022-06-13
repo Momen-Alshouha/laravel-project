@@ -20,6 +20,7 @@ class MentorController extends Controller
         
 
         $user=User::findOrfail($mentor);
+        
         $user->update(['name'=>$request->input('name'),'email'=>$request->input('email'),'password'=> Hash::make($request->input('password')),
         'mentor_category'=>$request->input('mentor_category'),'mentor_about'=>$request->input('mentor_about')]);
 
