@@ -64,9 +64,9 @@
     <!-- Carousel End -->
 
     @php
-        use App\Models\category;
-        $data=category::all();
-        
+    use App\Models\category;
+    $data = category::all();
+
     @endphp
 
 
@@ -77,32 +77,50 @@
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Categories</h5>
-                <h1>Explore Top Subjects</h1>
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Services</h5>
+                <h1>Explore Our Topics</h1>
             </div>
+
+
+
             <div class="row">
+<<<<<<< HEAD
                @foreach ($data as $data)
                     <div class="col-lg-3 col-md-6 mb-4"> 
                         <div class="cat-item position-relative overflow-hidden rounded mb-2">
                             <img class="img-fluid" src="{{ asset('/uploads/Category/' . $data->category_image) }}"
                                 alt="" style='height:250px;' >
                             <a class="cat-overlay text-white text-decoration-none" href="">
+=======
+                @foreach ($data as $data) 
+                    <div class="col-lg-4 col-md-6 mb-4 "  >
+                        <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                            <img class="img-fluid " src="{{ asset('/uploads/Category/' . $data->category_image) }}"
+                                class="cat-overlay text-white text-decoration-none" href="" width="100%" style="height: 250px;" >
+                         
+                                <a class="cat-overlay text-white text-decoration-none" href="">
+>>>>>>> 7dce070fc4b0e067e444c5f0ac88e6efc257ca3f
                                 <h4 class="text-white font-weight-medium">{{ $data->category_name }}</h4>
-                                 <p class="text-white font-weight-medium">{{ $data->category_description }}</p>
+                                <p class="text-white font-weight-medium">{{ $data->category_description }}</p>
+                   
+
+
                             </a>
                         </div>
                
             </div>
  @endforeach
 
+                    </div>
+                @endforeach
+
+            </div>
         </div>
-    </div>
-    </div>
     </div>
     <!-- Category Start -->
     @php
-        use App\Models\Course;
-        $courses = Course::all();        
+    use App\Models\Course;
+    $courses = Course::all();
     @endphp
 
     <!-- Courses Start -->
@@ -113,43 +131,46 @@
                 <h1>Mentors Recommend Courses</h1>
             </div>
             <div class="row">
-           @foreach ($courses as $course)
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="rounded overflow-hidden mb-2">
-                    <img class="img-fluid" src="https://online.ejabi.org.jo/wp-content/uploads/2021/08/online-course-blog-header-1.jpg" alt="">
-                    <div class="bg-secondary p-4">
-                        
-                        <p class="h5" href="">{{$course->name}} Course</p>
-                        <p class="h5" href="">{{$course->description}}</p><br>
-                        <a class="h5" href="{{$course->link}}" target="_blank" style="text-decoration: underline">Go To The Course</a>
-                        <div class="border-top mt-4 pt-4">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5
-                                    
-                                </h6>
-                                @if (Auth::check())
-                                    <form action="{{route('course.destroy',$course->id)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete Course</button>
-                                    </form>
-                                @endif
-                                
+                @foreach ($courses as $course)
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="rounded overflow-hidden mb-2">
+                            <img class="img-fluid"
+                                src="https://online.ejabi.org.jo/wp-content/uploads/2021/08/online-course-blog-header-1.jpg"
+                                alt="">
+                            <div class="bg-secondary p-4">
+
+                                <p class="h5" href="">{{ $course->name }} Course</p>
+                                <p class="h5" href="">{{ $course->description }}</p><br>
+                                <a class="h5" href="{{ $course->link }}" target="_blank"
+                                    style="text-decoration: underline">Go To The Course</a>
+                                <div class="border-top mt-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5
+
+                                        </h6>
+                                        @if (Auth::check())
+                                            <form action="{{ route('course.destroy', $course->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete Course</button>
+                                            </form>
+                                        @endif
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-            @endforeach
-           </div>
         </div>
     </div>
-               
+
     <!-- Courses End -->
 
 
 
-    <!-- Team Start -->
+    {{-- <!-- Team Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <div class="text-center mb-5">
@@ -173,7 +194,7 @@
 
                                 </div>
                                 <div style="background-color: rgb(237, 235, 245)
-                            " class="team-item " class="bg-secondary p-4">
+                                    " class="team-item " class="bg-secondary p-4">
                                     <h3>{{ $user->name }}</h3>
                                     <h6>{{ $user->email }}</h6>
                                     <p class="m-0">{{ $user->mentor_about }}</p>
@@ -189,7 +210,7 @@
         </div>
     </div>
     <!-- Team End -->
-
+ --}}
 
 
     <!-- About Start -->
@@ -204,10 +225,20 @@
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
                         <h1>Innovative Way To Learn</h1>
                     </div>
+<<<<<<< HEAD
                     <p>"Effectively influence civil society, all partners and stakeholders, through charitable work and
                         collective social responsibility "<br>
                         The MentorHUB platform is national and aims to unify efforts in the fields of volunteerism and youth engagement at all levels. By building partnerships with CBOs, NGOs, public agencies and private companies, the platform offers as many volunteer opportunities as possible with the belief that volunteering brings new skills to young people,</p>
            
+=======
+                    <p>Online learning is the newest and most popular form of 
+                        distance education today. Within the past decade it has 
+                        had a major impact on postsecondary education and the 
+                        trend is only increasing. 
+                        In this workshop we will explore what the experience of 
+                        online learning is like for students and how it has
+                        changed the role of the instructor.</p>
+>>>>>>> 7dce070fc4b0e067e444c5f0ac88e6efc257ca3f
                     <a href="{{ route('profile.index') }}"
                         class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View our mentors</a>
                 </div>

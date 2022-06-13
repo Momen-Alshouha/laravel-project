@@ -15,10 +15,6 @@
               <div>{{session('success')}}</div>
               @endif
 
-              
-
-             
-
               <img style="width: 180px;border-radius: 15%" src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="image" class="img-fluid" >
               <h5 class="my-3">{{Auth::user()->name}}</h5>
               <p class="text-muted mb-1">{{Auth::user()->email}}</p>
@@ -70,15 +66,15 @@
                  
                   <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                     <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                    <p class="mb-0">@mdbootstrap</p>
+                    <p class="mb-0">https://twitter.com</p>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                     <i class="fab fa-instagram fa-lg" style="color: #630821;"></i>
-                    <p class="mb-0">mdbootstrap</p>
+                    <p class="mb-0">https://www.instagram.com</p>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                     <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                    <p class="mb-0">mdbootstrap</p>
+                    <p class="mb-0">https://web.facebook.com</p>
                   </li>
                    <li class="list-group-item d-flex justify-content-between align-items-center  p-3">
                    <a  type="button" class="btn btn-primary "style='margin-left:570px' href="{{route('course.create') }}">{{ __('Add Course') }}</a>

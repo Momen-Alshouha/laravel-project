@@ -116,10 +116,12 @@ Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('ca
 //     return view('pages.mentorSingle');
 // });
 
-Route::resource('mentorSingle', singleMentor::class);
+ 
 
-Route::get('/mentorSingle', [singleMentor::class,'index']);
-Route::post('/sendmentor', [singleMentor::class,'sendmail']);
+Route::get('/mentorSingle/{id}', [singleMentor::class,'index']);
+
+
+ 
 
 Route::resource('course', CourseController::class);
 

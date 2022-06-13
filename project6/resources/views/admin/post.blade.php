@@ -127,8 +127,8 @@
             var name = $(this).data("name");
             event.preventDefault();
             swal({
-                    title: `Are you sure you want to delete this category?`,
-                    text: "If you delete this, it will delete all mentors under this category.",
+                    title: `Are you sure you want to delete this Post?`,
+                    // text: "If you delete this, it will delete all mentors under this category.",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,

@@ -57,7 +57,7 @@
 
             <div class="col-lg-9 ">
 
-                <nav style="margin-left: 200px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a  href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-1 "><span class="text-primary">MENTOR</span>HUB</h1>
                     </a>
@@ -70,11 +70,11 @@
                     
                     <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class=" navbar-nav py-1 px-5 ">
-                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-3"><h5>Home</h5></a>
-                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-3"><h5>Mentors</h5></a>
-                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-3"><h5>Ask</h5></a>
-                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-3"><h5>About</h5></a>
-                            <a  style="margin-top: 30px" href="/#contact" class="nav-item nav-link pr-3"><h5>Contact</h5></a>
+                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-5"><h5>Home</h5></a>
+                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-5"><h5>Mentors</h5></a>
+                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-5"><h5>Ask</h5></a>
+                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-5"><h5>About</h5></a>
+                            <a  style="margin-top: 30px" href="/#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
 
                             <!-- Right Side Of Navbar -->
                             <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
@@ -82,7 +82,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link pr-3"
+                                            <a style="margin-top: 12px" class="nav-link pr-5"
                                                 href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif

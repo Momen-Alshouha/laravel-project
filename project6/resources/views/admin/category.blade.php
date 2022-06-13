@@ -98,6 +98,9 @@
                                             </form> 
                                                
                                                     
+                                            </form> -->
+                                          
+
                                                 <form method="post" action="{{ route('category.destroy', $value->id) }}"
                                                     class="d-inline">
                                                     @csrf
@@ -106,6 +109,8 @@
                                                         data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
                                               
+                                               
+                                                {{-- <a href=" {{ url('/category/'.$value->id.'/edit') }}"  class="btn btn-success btn-flat ">Update</a> --}}
                                             </td>
                                         </tr>
                                     @endforeach
