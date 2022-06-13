@@ -1,7 +1,13 @@
 @extends('admin.master')
 
 
+
+
+
+
+
 @section('content')
+<head>
 
 <style>
     .page-wrapper {
@@ -27,6 +33,9 @@
         border-color: #cc5200;
     }
 </style>
+
+
+</head>
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -103,5 +112,4 @@
         </form>
     </div>
 </div>
-
 @endsection
