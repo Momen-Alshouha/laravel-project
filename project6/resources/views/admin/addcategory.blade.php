@@ -74,7 +74,13 @@
                     </div>
                 </div>
 
-
+                     <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>description:</strong>
+                        <input type="text" name="category_description" class="form-control " style="height:50px" placeholder="Name">
+                    </div>
+                </div>
+                
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong class="form-label" for="customFile">Upload Category Image </strong>
@@ -82,6 +88,7 @@
                     </div>
                 </div>
 
+           
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 ">

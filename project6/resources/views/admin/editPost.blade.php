@@ -63,34 +63,37 @@
 
 
 
-        <form action="{{ route('category.update',$categories->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('post.update',$post->id) }}" method="POST" enctype="multipart/form-data">
 
             @csrf
             @method('put')
-            <input type='hidden'name='id' value="{{$categories->id}}">
+            <input type='hidden'name='id' value="{{$post->id}}">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name:</strong>
-                        <input type="text" value="{{$categories->category_name}}" name="category_name" class="form-control " style="height:50px" placeholder="Name">
+                        <input type="text" value="{{$post->title}}" name="title" class="form-control " style="height:50px" placeholder="Name">
                     </div>
                 </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>description:</strong>
-                        <input type="text" value="{{$categories->category_description}}" name="category_description" class="form-control " style="height:50px" placeholder="description">
+                        <input type="text" value="{{$post->body}}" name="body" class="form-control " style="height:50px" placeholder="description">
                     </div>
                 </div>
 
 
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong class="form-label" for="customFile">Upload Category Image </strong>
-                        <input type="file"   value="{{$categories->category_image}}" name="category_image" style="height:50px" class="form-control" id="customFile" />
+                        <strong>description:</strong>
+                        <select name='active'>
+                        <option value='{{$post->active}}'></option>
+                         <option value='active'>active</option>
+                          <option value='non-active'>non-active</option>
+                        <select>
                     </div>
                 </div>
-
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 ">

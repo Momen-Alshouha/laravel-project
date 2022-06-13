@@ -132,10 +132,10 @@
                         </li>
 
                         <li class="sidebar-item mb-4">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/posts"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/post"
                                 aria-expanded="false" style="font-size: 20px;">
-                                <i class="material-icons" aria-hidden="true" style="font-size: 20px;"></i>
-                                <span class="hide-menu">Posts</span>
+                                <i class="fa fa-question" aria-hidden="true" style="font-size: 20px;"></i>
+                                <span class="hide-menu">Questions</span>
                             </a>
                         </li>
 

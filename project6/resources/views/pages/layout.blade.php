@@ -72,6 +72,7 @@
                         <div class=" navbar-nav py-1 px-5 ">
                             <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-5"><h5>Home</h5></a>
                             <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-5"><h5>Mentors</h5></a>
+                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-5"><h5>Ask</h5></a>
                             <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-5"><h5>About</h5></a>
                             <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link pr-5"><h5>Contact</h5></a>
 
@@ -81,7 +82,7 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 13px" class="nav-link pr-5"
+                                            <a style="margin-top: 13px" class="nav-link pr-2"
                                                 href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
@@ -99,6 +100,9 @@
                                 </li>
                                     <li style="margin-top: 15px;" class="nav-item ">
                                     <li style="margin-top: 15px" class="nav-item ">
+                             
+                                    <li style="margin-top: 15px;" class="nav-item ">
+                                    <li style="margin-top: 25px;margin-left: 10px" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"

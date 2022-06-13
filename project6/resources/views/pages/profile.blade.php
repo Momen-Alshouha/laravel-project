@@ -22,7 +22,7 @@
               <img style="width: 180px;border-radius: 15%" src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="image" class="img-fluid" >
               <h5 class="my-3">{{Auth::user()->name}}</h5>
               <p class="text-muted mb-1">{{Auth::user()->email}}</p>
-              <p class="text-muted mb-1">{{Auth::user()->mentor_about}}</p>
+              <p class="text-muted mb-3">{{Auth::user()->mentor_about}}</p>
 
               <div class="d-flex justify-content-center mb-2">
                 <a href="{{ route('profile.show',Auth::user()->id) }}" type="button" class="btn btn-primary">Edit Profile </a>
@@ -79,6 +79,9 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                     <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
                     <p class="mb-0">mdbootstrap</p>
+                  </li>
+                   <li class="list-group-item d-flex justify-content-between align-items-center  p-3">
+                   <a  type="button" class="btn btn-primary "style='margin-left:570px' href="{{route('course.create') }}">{{ __('Add Course') }}</a>
                   </li>
                 </ul>
               </div>

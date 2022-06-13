@@ -9,7 +9,8 @@ class PostControlle extends Controller
 {
       public function index()
     {
-        $posts = Post::all();
+        $matchThese = ['active' => 'active'];
+        $posts = Post::where($matchThese)->get();
     
         return view('posts.index', compact('posts'));
     }
