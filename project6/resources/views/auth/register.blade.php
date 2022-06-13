@@ -74,7 +74,7 @@
                                 <select id="ctg" class="form-control" name="ctg" value="{{ old('ctg') }}"  required>
                                     @foreach ($cat as $allCat)
 
-                                    <option value="{{$allCat->category_name}}">{{$allCat->category_name}}</option>
+                                    <option value="{{$allCat->id}}">{{$allCat->category_name}}</option>
                                     @endforeach
 
                                 </select>

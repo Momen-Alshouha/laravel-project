@@ -51,7 +51,6 @@
                             <span class="text-primary"
                                 style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
 
-
                     </h2>
                 </a>
             </div>
