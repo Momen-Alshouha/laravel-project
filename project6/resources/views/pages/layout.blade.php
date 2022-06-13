@@ -22,7 +22,7 @@
 
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="https://www.nicepng.com/png/full/11-118527_m-infoline-logo-m-orange.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -43,7 +43,7 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block ">
-        <div class="row align-items-center py-2 px-xl-5">
+        <div class="row align-items-center py-1 px-xl-5">
             <div id="top" class="col-lg-3">
                 <a href="/" class="text-decoration-none">
                     <h2 class="m-0"><span>
@@ -51,15 +51,14 @@
                             <span class="text-primary"
                                 style="font-family: 'Bungee Inline', cursive;">MENTOR</span></span>HUB</h2>
 
-
                     </h2>
                 </a>
             </div>
 
             <div class="col-lg-9 ">
 
-                <nav style="margin-left: 100px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                <nav   class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 ">
+                    <a  href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -67,43 +66,49 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="{{ route('profile.index') }}" class="nav-item nav-link">Mentors</a>
-                            <a href="/#about" class="nav-item nav-link">About</a>
-                            <a href="#contact" class="nav-item nav-link ">Contact</a>
+           
+                    
+                    <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class=" navbar-nav py-1 px-5 ">
+                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link "><h5>Home</h5></a>
+                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link "><h5>Mentors</h5></a>
+                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link "><h5>Ask</h5></a>
+                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link "><h5>About</h5></a>
+                            <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link "><h5>Contact</h5></a>
 
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ms-auto">
+                            <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link"
-                                                href="{{ route('login') }}">{{ __('Sign in') }}</a>
+                                        <li  class="nav-item">
+                                            <a style="margin-top: 13px" class="nav-link pr-2"
+                                                href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="nav-link"
-                                                href="{{ route('register') }}">{{ __('Join us') }}</a>
+                                            <a style="margin-top: 13px" class="nav-link"
+                                                href="{{ route('register') }}"><h5>{{ __('Join us') }}</h5></a>
                                         </li>
                                     @endif
                                 @else
+                             
                                     <li style="margin-top: 15px;" class="nav-item ">
+                                    <li style="margin-top: 25px;margin-left: 10px" class="nav-item ">
                                         <div class="nav-item dropdown">
-                                            <button style="text-transform: uppercase;
-                                                        " class="btn btn-outline-primary ml-2 dropdown-toggle"
+                                            <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 {{ __(Auth::user()->name) }}
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item"
-                                                    href="{{ route('profile.edit', Auth::user()->id) }}">my profile</a>
-                                                <a class="dropdown-item" style="color: #ff6600af "
+                                                    href="{{ route('profile.edit', Auth::user()->id) }}">My profile</a>
+                                                <a class="dropdown-item" style="color: #ff6600c2 "
                                                     href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                              document.getElementById('logout-form').submit();">
+                                                          document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
 
@@ -115,12 +120,29 @@
                                         </div>
                                     </li>
 
+                                    {{-- <a class="nav-link " href="{{ route('profile.edit',Auth::user()->id) }}"
+                                    role="button">
+                                    {{ __(Auth::user()->name)}}
+                                </a> --}}
 
 
 
+                                    {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
+                                    {{-- <li class="nav-item">
+                                        <a style="color: #ff6600af " class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li> --}}
 
                                 @endguest
-
+                            
                             </ul>
 
                         </div>
@@ -129,6 +151,8 @@
 
                 </nav>
             </div>
+
+            
 
         </div>
     </div>
@@ -166,10 +190,9 @@
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Links</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="{{ route('profile.index') }}"><i
-                                    class="fa fa-angle-right mr-2"></i>Mentors</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                            <a class="text-white mb-2" href="{{ route('profile.index') }}"><i class="fa fa-angle-right mr-2"></i>Mentors</a>
+                            <a class="text-white mb-2" href="/#about"><i class="fa fa-angle-right mr-2"></i>About</a>
+                            {{-- <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a> --}}
 
                         </div>
                     </div>

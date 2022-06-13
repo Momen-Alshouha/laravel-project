@@ -18,7 +18,7 @@
                         <div class="team-img position-relative">
                             <img style="height: 240px;width:250px" class="img-fluid" src="{{asset('uploads/images/'.$user->img)}}" alt="">
                             <div class="team-social">
-                                <a class="btn btn-outline-light  mx-1" href="#">View </a>
+                                <a class="btn btn-outline-light  mx-1" href="/mentorSingle/{{ $user->id }}">View </a>
                                 
                             </div>
                             <div class="bg-secondary p-4">

@@ -1,4 +1,5 @@
-@extends('admin.master')
+
+@extends('pages.layout')
 
 
 
@@ -29,22 +30,19 @@
         border-color: #cc5200;
     }
 </style>
+<hr>
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Add Categories</h4>
+            <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12 mt-4">
+             <h4 class="page-title mt-4"style='text-align:center'>Add Question</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
-                    {{-- <ol class="breadcrumb ms-auto">
-                            <li><a href="#" class="fw-normal">Dashboard</a></li>
-                        </ol>
-                        <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
-                            class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Save Updates</a> --}}
+                 
                 </div>
             </div>
         </div>
@@ -64,37 +62,30 @@
         @endif
 
 
-        <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('posts.store') }}" method="POST" >
             @csrf
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Name:</strong>
-                        <input type="text" name="category_name" class="form-control " style="height:50px" placeholder="Name">
+            <div class="row ">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-4 ">
+                    <div class="form-group ">
+                        <strong >Question:</strong>
+                        <input type="text" name="title" class="form-control" required style="height:50px" placeholder="">
                     </div>
                 </div>
 
-                     <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>description:</strong>
-                        <input type="text" name="category_description" class="form-control " style="height:50px" placeholder="Name">
-                    </div>
-                </div>
-                
+
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong class="form-label" for="customFile">Upload Category Image </strong>
-                        <input type="file" name="category_image" style="height:50px" class="form-control" id="customFile" />
+                        <strong class="form-label" for="customFile">Description </strong>
+                          <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
                     </div>
                 </div>
 
-           
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <div class="form-group">
 
-                    <button type="submit" style="height:50px" class="btn btn-primary" id="customFile"> ADD Category</button>
+                    <button type="submit" style="height:50px" class="btn btn-primary" id="customFile"> submit</button>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
@@ -12,7 +12,9 @@ use App\Http\Controllers\MentorRequestController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\singleMentor;
 use App\Http\Controllers\categoryShowController;
-/*
+use App\Http\Controllers\PostControlle;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\postAdminController;/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -40,8 +42,8 @@ Route::get('/show', function () {
 // });
 
 Route::get('/',[categoryShowController::class,'index']);
-
-
+Route::resource('/posts', PostControlle::class);
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
 Route::resource('profile',MentorController::class);
 
 Route::resource('image',changeimage::class);
@@ -59,9 +61,6 @@ Route::post('edit_profile',[MentorController::class,'update_mentor']);
 //     return view('pages.editprofile');
 // });
 
-Route::get('/posts', function () {
-    return view('admin.posts');
-});
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
@@ -82,6 +81,7 @@ Route::get('/dashboard', [AdminController::class,'index']);
 Route::resource('/mentors', MentorRequestController::class);
 
 Route::resource('/category', CategoryController::class);
+Route::resource('/post', postAdminController::class);
 
 // Route::resource('/admin_profile', [AdminController::class,'show']);
 
@@ -112,10 +112,25 @@ Route::delete('category/{id}', [CategoryController::class, 'destroy'])->name('ca
 //     return view('pages.mentorSingle');
 // });
 
-Route::resource('mentorSingle', singleMentor::class);
+ 
 
-Route::get('/mentorSingle', [singleMentor::class,'index']);
-Route::post('/sendmentor', [singleMentor::class,'sendmail']);
+Route::get('/mentorSingle/{id}', [singleMentor::class,'index']);
+
+
+ 
+
+Route::resource('course', CourseController::class);
+
+
+Route::get('/home', function () {
+    return view('pages.home');
+});
+
+Route::get('/create_course', function () {
+    return view('pages.create_course');
+});
+
+
 
 
 

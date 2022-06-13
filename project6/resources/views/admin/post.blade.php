@@ -29,7 +29,7 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Categories</h4>
+                    <h4 class="page-title">Questions</h4>
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
@@ -39,7 +39,7 @@
 
                         <a href="/addcategory"
                             class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add
-                            Categories</a>
+                            Question</a>
                     </div>
                 </div>
             </div>
@@ -70,41 +70,43 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Categroies Tables</h3>
+                        <h3 class="box-title">Question Tables</h3>
 
                         <div class="table-responsive">
                             <table class="table text-nowrap">
                                 <thead style="background-color: #343a40; color: #fff;">
                                     <tr>
-                                        <th class="border-top-0 " style="color: #fff;">Category Name</th>
-                                        <th class="border-top-0" style="color: #fff;">Category Image</th>
+                                        <th class="border-top-0 " style="color: #fff;">Question</th>
+                                        <th class="border-top-0 " style="color: #fff;">description</th>
+                                         <th class="border-top-0" style="color: #fff;">active</th>
                                         <th class="border-top-0" style="color: #fff;">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $value)
+                                    @foreach ($posts as $value)
                                         <tr>
-                                            <td>{{ $value->category_name }}</td>
+                                            <td>{{ $value->title }}</td>
+                                            <td>{{ $value->body }}</td>
+                                            <td>{{ $value->active }}</td>
+                                          
                                             <td>
-                                                <img src="{{ asset('/uploads/Category/' . $value->category_image) }}"
-                                                    width="100px" height="100px" alt="Image">
-                                            </td>
-                                            <td>
-                                                <!--  <form method="get" action="/editCat/{{ $value->id }}/edit" class="d-inline">
+                                                <!--  <form method="get" action="/editPost/{{ $value->id }}/edit" class="d-inline">
                                             @csrf
-                                            @method('PUT')
-                                            <input class="btn btn-success" type="submit" value="Edit" name="edit">
+                                            @method('PUT') 
+                                            
+                                            <input class="btn btn-success btn-flat" type="submit" value="Edit" name="edit">
                                             </form> -->
-                                                <a href="/editCat/{{ $value->id }}"
-                                                    class="btn btn-success btn-flat ">Edit</a>
+                                             
 
-                                                <form method="post" action="{{ route('category.destroy', $value->id) }}"
+                                                <form method="post" action="{{ route('post.destroy', $value->id) }}"
                                                     class="d-inline">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
                                                         data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
+                                                <a href="{{ route('post.edit', $value->id) }}"
+                                                    class="btn btn-primary btn-flat ">Update</a>
                                             </td>
                                         </tr>
                                     @endforeach

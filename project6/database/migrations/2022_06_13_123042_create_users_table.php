@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             
             $table->integer('mentor_category')->unsigned();
 
-            $table->string('category_name');
+            // $table->string('category_name');
 
             $table->text('mentor_about');
             $table->rememberToken();
@@ -32,9 +32,7 @@ class CreateUsersTable extends Migration
             $table->foreign('mentor_category')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
 
 
-            $table->foreign('category_name')->references('category_name')->on('categories')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+           
 
         });
     }
