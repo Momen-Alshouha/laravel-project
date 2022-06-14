@@ -219,7 +219,7 @@
                             <span class="text-danger"> {{ $message }} </span>
                          @enderror
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-5">sent</button>
+                            <button class="btn btn-primary px-5">send</button>
                            
                         </div>
                          </form>
