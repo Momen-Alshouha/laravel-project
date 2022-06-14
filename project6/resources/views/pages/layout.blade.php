@@ -57,7 +57,7 @@
 
             <div class="col-lg-9 ">
 
-                <nav style="margin-left: 250px" class="navbar  navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <nav style="margin-left: 350px" class="navbar  navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-0">
                     <a  href="" class="text-decoration-none d-block d-lg-none">
                         <h2 class="m-1 "><span class="text-primary">MENTOR</span>HUB</h2>
                     </a>
@@ -69,12 +69,12 @@
            
                     
                     <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class=" navbar-nav py-1 px-4 ">
-                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link pr-2"><h5>Home</h5></a>
-                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-2"><h5>Mentors</h5></a>
-                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-2"><h5>Ask</h5></a>
-                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link pr-2"><h5>About</h5></a>
-                            <a  style="margin-top: 30px" href="/#contact" class="nav-item nav-link pr-2"><h5>Contact</h5></a>
+                        <div class=" navbar-nav py-0 px-4 ">
+                            <a  style="margin-top: 17px" href="/" class="nav-item nav-link pr-2">Home</a>
+                            <a  style="margin-top: 17px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-2">Mentors</a>
+                             <a  style="margin-top: 17px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-2">Ask</a>
+                            <a  style="margin-top: 17px" href="/#about" class="nav-item nav-link pr-2">About</a>
+                            <a style="margin-top: 17px" href="/#contact" class="nav-item nav-link pr-2">Contact</a>
 
                             <!-- Right Side Of Navbar -->
                             <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
@@ -82,15 +82,15 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link pr-2"
-                                                href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
+                                            <a  class="nav-link pr-2"
+                                                href="{{ route('login') }}">{{ __('Sign in') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link"
-                                                href="{{ route('register') }}"><h5>{{ __('Join us') }}</h5></a>
+                                            <a  class="nav-link"
+                                                href="{{ route('register') }}">{{ __('Join us') }}</a>
                                         </li>
                                     @endif
                                 @else
