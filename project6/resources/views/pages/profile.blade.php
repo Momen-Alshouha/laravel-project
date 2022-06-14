@@ -15,10 +15,6 @@
               <div>{{session('success')}}</div>
               @endif
 
-              
-
-             
-
               <img style="width: 180px;border-radius: 15%" src="{{asset('uploads/images/'.Auth::user()->img)}}" alt="image" class="img-fluid" >
               <h5 class="my-3">{{Auth::user()->name}}</h5>
               <p class="text-muted mb-1">{{Auth::user()->email}}</p>

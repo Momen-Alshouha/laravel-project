@@ -43,7 +43,7 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block ">
-        <div class="row align-items-center py-1 px-xl-5">
+        <div class="row align-items-center py-2 px-xl-5">
             <div id="top" class="col-lg-3">
                 <a href="/" class="text-decoration-none">
                     <h2 class="m-0"><span>
@@ -57,9 +57,9 @@
 
             <div class="col-lg-9 ">
 
-                <nav   class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 ">
+                <nav style="margin-left: 350px" class="navbar  navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-0">
                     <a  href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0"><span class="text-primary">MENTOR</span>HUB</h1>
+                        <h2 class="m-1 "><span class="text-primary">MENTOR</span>HUB</h2>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -69,12 +69,12 @@
            
                     
                     <div class="p-1 collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class=" navbar-nav py-1 px-5 ">
-                            <a  style="margin-top: 30px" href="/" class="nav-item nav-link "><h5>Home</h5></a>
-                            <a  style="margin-top: 30px" href="{{ route('profile.index') }}" class="nav-item nav-link "><h5>Mentors</h5></a>
-                             <a  style="margin-top: 30px" href="{{ route('posts.index') }}" class="nav-item nav-link "><h5>Ask</h5></a>
-                            <a  style="margin-top: 30px" href="/#about" class="nav-item nav-link "><h5>About</h5></a>
-                            <a  style="margin-top: 30px" href="#contact" class="nav-item nav-link "><h5>Contact</h5></a>
+                        <div class=" navbar-nav py-0 px-4 ">
+                            <a  style="margin-top: 17px" href="/" class="nav-item nav-link pr-2">Home</a>
+                            <a  style="margin-top: 17px" href="{{ route('profile.index') }}" class="nav-item nav-link pr-2">Mentors</a>
+                             <a  style="margin-top: 17px" href="{{ route('posts.index') }}" class="nav-item nav-link pr-2">Ask</a>
+                            <a  style="margin-top: 17px" href="/#about" class="nav-item nav-link pr-2">About</a>
+                            <a style="margin-top: 17px" href="/#contact" class="nav-item nav-link pr-2">Contact</a>
 
                             <!-- Right Side Of Navbar -->
                             <ul style="margin-top: 17px;"  class="navbar-nav ms-auto">
@@ -82,24 +82,24 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li  class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link "
-                                                href="{{ route('login') }}"><h5>{{ __('Sign in') }}</h5></a>
+                                            <a  class="nav-link pr-2"
+                                                href="{{ route('login') }}">{{ __('Sign in') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a style="margin-top: 12px" class="nav-link"
-                                                href="{{ route('register') }}"><h5>{{ __('Join us') }}</h5></a>
+                                            <a  class="nav-link"
+                                                href="{{ route('register') }}">{{ __('Join us') }}</a>
                                         </li>
                                     @endif
                                 @else
-                                
+                              
                                     <li style="margin-top: 15px;" class="nav-item ">
                                     <li style="margin-top: 15px" class="nav-item ">
                              
                                     <li style="margin-top: 15px;" class="nav-item ">
-                                    <li style="margin-top: 25px;margin-left: 10px" class="nav-item ">
+                                    <li style="margin-top: 17px;margin-left: 7px" class="nav-item ">
                                         <div class="nav-item dropdown">
                                             <button style="text-transform: uppercase;" class="btn btn-outline-primary ml-2 dropdown-toggle"
                                                 class="btn btn-secondary " type="button" id="dropdownMenuButton"
@@ -155,8 +155,6 @@
                 </nav>
             </div>
 
-            
-
         </div>
     </div>
     <!-- Topbar End -->
@@ -194,33 +192,45 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-white mb-2" href="{{ route('profile.index') }}"><i class="fa fa-angle-right mr-2"></i>Mentors</a>
-                            <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Ask</a>
-                           
-                            <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>About</a>
-
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
-
+                            <a class="text-white mb-2" href="/#about"><i class="fa fa-angle-right mr-2"></i>About</a>
+                            {{-- <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a> --}}
 
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 mb-5">
+             @if(session()->has('message'))
+              <div class="alert alert-success">
+                  {{ session()->get('message') }}
+              </div>
+          @endif
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Subscribe to our newsletter</p>
-                <div class="w-100">
+                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu
+                    kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <div class="w-100">  
+                  <form action="{{ route('send.email') }}" method="post">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;"
+                 
+                         @csrf
+                         
+                        <input type="email" name="email" class="form-control border-light" style="padding: 30px;"
                             placeholder="Your Email Address">
+                             @error('email')
+                            <span class="text-danger"> {{ $message }} </span>
+                         @enderror
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Sign Up</button>
+                            <button class="btn btn-primary px-5">send</button>
+                           
                         </div>
+                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+       
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
         style="border-color: rgba(256, 256, 256, .1) !important; ">
         <div class="row">

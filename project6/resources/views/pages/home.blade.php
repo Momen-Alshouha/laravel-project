@@ -98,8 +98,12 @@
 
                             </a>
                         </div>
+               
+            </div>
+ @endforeach
+
                     </div>
-                @endforeach
+                
 
             </div>
         </div>

@@ -1,4 +1,5 @@
 @foreach($comments as $comment)
+
     <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
           <div class="single-comment justify-content-between d-flex">
           <div class="user justify-content-between d-flex">
