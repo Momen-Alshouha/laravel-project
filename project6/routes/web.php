@@ -15,7 +15,9 @@ use App\Http\Controllers\categoryShowController;
 use App\Http\Controllers\PostControlle;
 use App\Http\Controllers\sendEmail;
 use App\Http\Controllers\PostAdminController;
-use App\Http\Controllers\CommentController;/*
+use App\Http\Controllers\CommentController;
+
+/*
 =======
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\postAdminController;/*
@@ -91,6 +93,8 @@ Route::resource('/post', postAdminController::class);
 
 
 Route::get('/addcategory', [CategoryController::class,'create']);
+Route::get('/home', 'App\Http\Controllers\EmailController@create');
+Route::post('/home', 'App\Http\Controllers\EmailController@sendEmail')->name('send.email');
 
 // Route::get('/editCat/{id}/edit', [CategoryController::class,'edit']);
 

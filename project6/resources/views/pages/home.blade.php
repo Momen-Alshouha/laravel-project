@@ -84,14 +84,6 @@
 
 
             <div class="row">
-<<<<<<< HEAD
-               @foreach ($data as $data)
-                    <div class="col-lg-3 col-md-6 mb-4"> 
-                        <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                            <img class="img-fluid" src="{{ asset('/uploads/Category/' . $data->category_image) }}"
-                                alt="" style='height:250px;' >
-                            <a class="cat-overlay text-white text-decoration-none" href="">
-=======
                 @foreach ($data as $data) 
                     <div class="col-lg-4 col-md-6 mb-4 "  >
                         <div class="cat-item position-relative overflow-hidden rounded mb-2">
@@ -99,7 +91,6 @@
                                 class="cat-overlay text-white text-decoration-none" href="" width="100%" style="height: 250px;" >
                          
                                 <a class="cat-overlay text-white text-decoration-none" href="">
->>>>>>> 7dce070fc4b0e067e444c5f0ac88e6efc257ca3f
                                 <h4 class="text-white font-weight-medium">{{ $data->category_name }}</h4>
                                 <p class="text-white font-weight-medium">{{ $data->category_description }}</p>
                    
@@ -112,7 +103,7 @@
  @endforeach
 
                     </div>
-                @endforeach
+                
 
             </div>
         </div>
@@ -225,12 +216,6 @@
                         <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
                         <h1>Innovative Way To Learn</h1>
                     </div>
-<<<<<<< HEAD
-                    <p>"Effectively influence civil society, all partners and stakeholders, through charitable work and
-                        collective social responsibility "<br>
-                        The MentorHUB platform is national and aims to unify efforts in the fields of volunteerism and youth engagement at all levels. By building partnerships with CBOs, NGOs, public agencies and private companies, the platform offers as many volunteer opportunities as possible with the belief that volunteering brings new skills to young people,</p>
-           
-=======
                     <p>Online learning is the newest and most popular form of 
                         distance education today. Within the past decade it has 
                         had a major impact on postsecondary education and the 
@@ -238,7 +223,6 @@
                         In this workshop we will explore what the experience of 
                         online learning is like for students and how it has
                         changed the role of the instructor.</p>
->>>>>>> 7dce070fc4b0e067e444c5f0ac88e6efc257ca3f
                     <a href="{{ route('profile.index') }}"
                         class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">View our mentors</a>
                 </div>

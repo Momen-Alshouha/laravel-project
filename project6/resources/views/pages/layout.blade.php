@@ -203,22 +203,36 @@
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 mb-5">
+             @if(session()->has('message'))
+              <div class="alert alert-success">
+                  {{ session()->get('message') }}
+              </div>
+          @endif
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
                 <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu
                     kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
-                <div class="w-100">
+                <div class="w-100">  
+                  <form action="{{ route('send.email') }}" method="post">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;"
+                 
+                         @csrf
+                        <input type="email" name="email" class="form-control border-light" style="padding: 30px;"
                             placeholder="Your Email Address">
+                             @error('email')
+                            <span class="text-danger"> {{ $message }} </span>
+                         @enderror
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Sign Up</button>
+                            <button class="btn btn-primary px-5">sent</button>
+                           
                         </div>
+                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+       
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
         style="border-color: rgba(256, 256, 256, .1) !important; ">
         <div class="row">
