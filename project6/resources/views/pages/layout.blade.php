@@ -213,6 +213,7 @@
                     <div class="input-group">
                  
                          @csrf
+                         
                         <input type="email" name="email" class="form-control border-light" style="padding: 30px;"
                             placeholder="Your Email Address">
                              @error('email')

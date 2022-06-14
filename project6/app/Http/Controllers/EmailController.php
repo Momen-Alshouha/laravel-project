@@ -20,13 +20,13 @@ class EmailController extends Controller
         ]);
 
         $data = [
-    
+          'subject'=>'Newletter',
           'email' => $request->email,
       
         ];
 
         Mail::send('pages.home', $data, function($message) use ($data) {
-          $message->to($data['email'])
+          $message->to($data['email']) ->subject($data['subject'])
       ;
         });
 
