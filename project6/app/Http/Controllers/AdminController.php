@@ -48,9 +48,9 @@ class AdminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(User $admin)
+    public function show(admin $admin)
     {
-        $admin = User::find(3);
+        $admin = admin::find(1);
         return view('admin.admin_profile', compact('admin'));
     }
 
