@@ -17,7 +17,7 @@ class CreateMentorApplicationsTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->date('age');
             $table->text('education');
             $table->text('purpose');  

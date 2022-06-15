@@ -9,7 +9,12 @@ use App\Models\mentor_application;
 class sendEmail extends Controller
 {
     public function store(Request $request)
-    {
+    {//ahmad code
+
+
+
+
+        
         $m_a=new mentor_application();
 
         $m = Application::find($request->id);
