@@ -84,7 +84,7 @@ class MentorApplicationController extends Controller
     public function destroy(mentor_application $mentor_application)
     {
         $app=mentor_application::find($mentor_application);
-        $app->delete();
+    $app->delete();
         return redirect()->to('mapp.show')->with('success','Applicant has been deleted');
     }
 }

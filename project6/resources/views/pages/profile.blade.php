@@ -111,7 +111,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Waiting Applications</h3>
+                            <h5 class="box-title">Accepted Applicants</h5>
 
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
