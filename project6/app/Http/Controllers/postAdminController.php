@@ -7,12 +7,20 @@ use App\Models\Post;
 
 class postAdminController extends Controller
 {
-        public function index()
+        public function index(Request $request)
     {
-        
-        $posts = Post::all();
+     $name=$request->title;
+      if(isset($name)){
+           
+          $posts= Post::Where('title',$name)->get();
+          return view('admin.post',compact('posts'));
+      }
+          else{
+             $posts = Post::all();
     
         return view('admin.post', compact('posts'));
+          }
+    
     }
    
     /**

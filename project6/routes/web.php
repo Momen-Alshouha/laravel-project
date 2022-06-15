@@ -15,7 +15,8 @@ use App\Http\Controllers\categoryShowController;
 use App\Http\Controllers\PostControlle;
 use App\Http\Controllers\sendEmail;
 use App\Http\Controllers\postAdminController; 
-use App\Http\Controllers\CommentController;/*
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\HomeController;/*
 =======
 use App\Http\Controllers\CommentController;
 

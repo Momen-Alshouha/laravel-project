@@ -37,9 +37,7 @@
                             <li><a href="/dashboard" class="fw-normal">Dashboard</a></li>
                         </ol>
 
-                        <a href="/addcategory"
-                            class="btn btn-primary d-none d-md-block pull-right ms-3 hidden-xs hidden-sm  ">Add
-                            Question</a>
+
                     </div>
                 </div>
             </div>
@@ -49,7 +47,17 @@
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
+        <div class="input-group" style='margin-top:50px;padding-right:28px;display:flex;justify-content:flex-end'>
+            <div class="form-outline">
+                <form method='get' action="{{ route('post.index') }}">
+                    @csrf
+                    <input type="search" name='title' id="form1" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary " style='height:36px'>search
+            </button>
+            </form>
 
+        </div>
         @if ($message = Session::get('success'))
             <div class="alert alert-success" role="alert">
                 {{ $message }}
@@ -78,7 +86,7 @@
                                     <tr>
                                         <th class="border-top-0 " style="color: #fff;">Question</th>
                                         <th class="border-top-0 " style="color: #fff;">description</th>
-                                         <th class="border-top-0" style="color: #fff;">active</th>
+                                        <th class="border-top-0" style="color: #fff;">active</th>
                                         <th class="border-top-0" style="color: #fff;">Actions</th>
                                     </tr>
                                 </thead>
@@ -88,15 +96,15 @@
                                             <td>{{ $value->title }}</td>
                                             <td>{{ $value->body }}</td>
                                             <td>{{ $value->active }}</td>
-                                          
+
                                             <td>
                                                 <!--  <form method="get" action="/editPost/{{ $value->id }}/edit" class="d-inline">
-                                            @csrf
-                                            @method('PUT') 
-                                            
-                                            <input class="btn btn-success btn-flat" type="submit" value="Edit" name="edit">
-                                            </form> -->
-                                             
+                                                @csrf
+                                                @method('PUT')
+                                                
+                                                <input class="btn btn-success btn-flat" type="submit" value="Edit" name="edit">
+                                                </form> -->
+
 
                                                 <form method="post" action="{{ route('post.destroy', $value->id) }}"
                                                     class="d-inline">
