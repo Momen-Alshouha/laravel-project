@@ -43,7 +43,7 @@
                                     text-overflow: ellipsis;' class="card-text white-text">{{ $post->body }}</p>
                                     <!-- <a href="#" class="btn btn-info my-3">Read more</a> -->
                                     <a href="{{ route('posts.show', $post->id) }}" class="btn "
-                                        style='background:#FFB452;color:white'>View Question</a>
+                                        style='background:#FFB452;color:white'>View Post</a>
                                 </div>
                             </div>
                             <!--/.Card-->

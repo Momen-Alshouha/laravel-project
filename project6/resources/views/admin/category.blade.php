@@ -3,10 +3,11 @@
 
 
 
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 @section('content')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <style>
         .btn-primary {
@@ -91,13 +92,10 @@
                                                     width="100px" height="100px" alt="Image">
                                             </td>
                                             <td>
-                                                  <form method="get" action=" {{route('category.edit',$value->id) }}" class="d-inline">
+                                                <!--  <form method="get" action="/editCat/{{ $value->id }}/edit" class="d-inline">
                                             @csrf
                                             @method('PUT')
                                             <input class="btn btn-success" type="submit" value="Edit" name="edit">
-                                            </form> 
-                                               
-                                                    
                                             </form> -->
                                           
 
@@ -108,7 +106,6 @@
                                                     <button type="submit" class="btn btn-danger btn-flat show_confirm"
                                                         data-toggle="tooltip" title='Delete'>Delete</button>
                                                 </form>
-                                              
                                                
                                                 {{-- <a href=" {{ url('/category/'.$value->id.'/edit') }}"  class="btn btn-success btn-flat ">Update</a> --}}
                                             </td>
@@ -143,6 +140,5 @@
                     }
                 });
         });
-    </script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </script>
 @endsection

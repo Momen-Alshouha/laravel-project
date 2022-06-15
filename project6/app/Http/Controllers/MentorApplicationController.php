@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admin;
-use App\Models\category;
-use App\Models\User;
-
-
+use App\Models\mentor_application;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class MentorApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $user)
     {
-        $admin = admin::find(1);
-        return view('admin.dashboard', compact('admin'));
+        $app=mentor_application::where('mentor_id',$user->id);
     }
 
     /**
@@ -46,22 +41,21 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\mentor_application  $mentor_application
      * @return \Illuminate\Http\Response
      */
-    public function show(admin $admin)
+    public function show(mentor_application $mentor_application)
     {
-        $admin = admin::find(1);
-        return view('admin.admin_profile', compact('admin'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\mentor_application  $mentor_application
      * @return \Illuminate\Http\Response
      */
-    public function edit(admin $admin)
+    public function edit(mentor_application $mentor_application)
     {
         //
     }
@@ -70,29 +64,21 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\mentor_application  $mentor_application
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, admin $admin)
+    public function update(Request $request, mentor_application $mentor_application)
     {
-        $admin->exists = true;
-
-        $admin->admin_name = $request->post('name');
-        $admin->admin_email = $request->post('email');
-        $admin->admin_password = $request->post('pass');
-
-        $admin->save();
-
-        return redirect()->back()->with('success', 'Profile Updated Successfully');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\mentor_application  $mentor_application
      * @return \Illuminate\Http\Response
      */
-    public function destroy(admin $admin)
+    public function destroy(mentor_application $mentor_application)
     {
         //
     }

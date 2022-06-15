@@ -13,8 +13,8 @@
 
             @foreach ($users as $user)
             
-                <div class="col-md-6 col-lg-3 text-center team mb-4 ">
-                    <div class="team-item rounded overflow-hidden mb-2 ">
+                <div class="col-md-6 col-lg-3 text-center team mb-4">
+                    <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
                             <img style="height: 300px; width:100%" class="img-fluid" src="{{asset('uploads/images/'.$user->img)}}" alt="">
                             <div class="team-social">

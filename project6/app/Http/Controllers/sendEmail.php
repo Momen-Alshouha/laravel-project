@@ -3,32 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Application;
+use App\Models\mentor_application;
 
 class sendEmail extends Controller
 {
-    public function store(Request $r)
+    public function store(Request $request)
     {
-    //     if(isset($r->sender)){
-    //     Mail::send(['text'=>'mail'], 'sa', function($message) {
-    //         $message->to('ahmadkhalaf18000@gmail.com', 'Tutorials Point')->subject
-    //            ('Laravel Basic Testing Mail');
-    //         $message->from('ahmadkhalaf18000@gmail.com','Virat Gandhi');
-    //      });}
-        if(isset($r->sender)){
-           $recipient ="ahmadkhalaf18000@gmail.com";
+        $m_a=new mentor_application();
 
-           $subject = "Approval from mentorHub";
+        $m = Application::find($request->id);
 
-           $message ='Hi mentor,we reviwed candidate application 
-           with your course,here is candidate info<br>'.'Candidate name:'. $r->userName.
-           ' Candidate email:'. $r->userEmail. ' Age:'. $r->userAge. ' Education:'. $r->userEducation.' Thanks';
+        $m_a->name = $m->name;
+        $m_a->email = $m->email;
+        $m_a->age = $m->age;
+        $m_a->education = $m->education;
+        $m_a->purpose = $m->purpose;
+        $m_a->mentor_id = $m->mentor_id;
 
-           $sender = "From: ahmadkhalaf18000@gmail.com";
+        $m_a->save();
 
-           mail($recipient, $subject, $message, $sender);
-        }
-       
-        return redirect('/app')->with('message','Email was sent to mentor' );
+        
+        // $m = Application::find($request->id);
+        $m->delete();
+        return redirect('/app')->with('success','Application was accepted successfully' );
 
     }
     
