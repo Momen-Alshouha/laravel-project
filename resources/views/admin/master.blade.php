@@ -18,8 +18,8 @@
     <link href="{{asset('https://fonts.googleapis.com/icon?family=Material+Icons')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{asset('plugins/bower_components/chartist/dist/chartist.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
+    <link href="{{asset('plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet')}}">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('admincss/adminstyle.min.css')}}" rel="stylesheet">
 </head>
@@ -48,7 +48,7 @@
                     </div>
 
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                        href="{{asset('javascript:void(0)')}}"><i class="ti-menu ti-close"></i></a>
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -184,7 +184,7 @@
     <script src="{{asset('js/app-style-switcher.js')}}"></script>
     <script src="{{asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{asset('js/waves.js')}}"></script>
     <!--Menu sidebar -->
     <script src="{{asset('js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
@@ -193,7 +193,7 @@
     <!--chartis chart-->
     <script src="{{asset('plugins/bower_components/chartist/dist/chartist.min.js')}}"></script>
     <script src="{{asset('plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
-    <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script src="{{asset('js/pages/dashboards/dashboard1.js')}}"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{{asset('https://code.jquery.com/jquery-3.3.1.slim.min.js')}}"

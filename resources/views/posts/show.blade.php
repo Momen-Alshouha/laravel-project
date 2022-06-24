@@ -233,14 +233,14 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="submit" class="btn"
-                                                            style='color:white;background:#FFB452' value="Add Comment" />
+                                                            style='background:#FFB452' value="Add Comment" />
                                                     </div>
                                                 </form>
                                 @endif
                                 @if (Auth::guest())
                                     <div class="alert alert-danger text-center" role="alert">
-                                       You must be mentor to comment</a>.
-                                       
+                                        You must be mentor to comment</a>.
+
                                     </div>
                                 @endif
                             </div>

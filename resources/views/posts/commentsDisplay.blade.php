@@ -1,5 +1,4 @@
 @foreach($comments as $comment)
-
     <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
           <div class="single-comment justify-content-between d-flex">
           <div class="user justify-content-between d-flex">
@@ -12,6 +11,7 @@
 </div><p>{{ $comment->body }}</p>
         <a href="" id="reply"></a>
         <div>
+        @if (Auth::user()) 
         <form method="post" action="{{ route('comments.store') }}">
             @csrf
             <div class="form-group">
@@ -23,6 +23,7 @@
                 <input type="submit" class="btn btn-warning" value="Reply" />
             </div>
         </form>
+         @endif  
        @include('posts.commentsDisplay', ['comments' => $comment->replies])
 </div>
     </div>

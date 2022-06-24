@@ -1,13 +1,7 @@
 @extends('admin.master')
 
 
-
-
-
-
-
 @section('content')
-<head>
 
 <style>
     .page-wrapper {
@@ -33,9 +27,6 @@
         border-color: #cc5200;
     }
 </style>
-
-
-</head>
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -88,7 +79,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>description:</strong>
-                        <input type="text" value="{{$categories->category_description}}" name="category_description" class="form-control " style="height:50px" placeholder="description">
+                        <input type="text" value="{{$categories->category_description}}" name="category_description" class="form-control " style="height:50px" placeholder="Description">
                     </div>
                 </div>
 
@@ -112,4 +103,5 @@
         </form>
     </div>
 </div>
+
 @endsection
